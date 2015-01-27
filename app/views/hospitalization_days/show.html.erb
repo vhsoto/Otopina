@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Qty:</strong>
+  <%= @hospitalization_day.qty %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @hospitalization_day.price %>
+</p>
+
+<p>
+  <strong>Subtotal:</strong>
+  <%= @hospitalization_day.subtotal %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @hospitalization_day.date %>
+</p>
+
+<p>
+  <strong>Adverse event:</strong>
+  <%= @hospitalization_day.adverse_event %>
+</p>
+
+<p>
+  <strong>Service:</strong>
+  <%= @hospitalization_day.service %>
+</p>
+
+<%= link_to 'Edit', edit_adverse_event_hospitalization_day_path(@hospitalization_day.adverse_event,@hospitalization_day) %> |
+<%= link_to 'Back', adverse_event_path(@adverse_event) %>

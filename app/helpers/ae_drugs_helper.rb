@@ -1,0 +1,2 @@
+module AeDrugsHelper
+end

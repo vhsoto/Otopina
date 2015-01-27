@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  drug_price: 1.5
+  drug_subtotal: 1.5
+  drug_time: 2015-01-21 19:01:32
+  qty: 1
+  adverse_event_id: 
+  drug_id: 
+  service_id: 
+  charge_id: 
+
+two:
+  drug_price: 1.5
+  drug_subtotal: 1.5
+  drug_time: 2015-01-21 19:01:32
+  qty: 1
+  adverse_event_id: 
+  drug_id: 
+  service_id: 
+  charge_id: 

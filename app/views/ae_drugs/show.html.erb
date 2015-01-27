@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Drug price:</strong>
+  <%= @ae_drug.drug_price %>
+</p>
+
+<p>
+  <strong>Drug subtotal:</strong>
+  <%= @ae_drug.drug_subtotal %>
+</p>
+
+<p>
+  <strong>Drug time:</strong>
+  <%= @ae_drug.drug_time %>
+</p>
+
+<p>
+  <strong>Qty:</strong>
+  <%= @ae_drug.qty %>
+</p>
+
+<p>
+  <strong>Adverse event:</strong>
+  <%= @ae_drug.adverse_event %>
+</p>
+
+<p>
+  <strong>Drug:</strong>
+  <%= @ae_drug.drug %>
+</p>
+
+<p>
+  <strong>Service:</strong>
+  <%= @ae_drug.service_id %>
+</p>
+
+<p>
+  <strong>Charge:</strong>
+  <%= @ae_drug.charge %>
+</p>
+
+<%= link_to 'Edit', edit_adverse_event_ae_drug_path(@ae_drug.adverse_event,@ae_drug) %> |
+<%= link_to 'Back', adverse_event_path(@adverse_event) %>

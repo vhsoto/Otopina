@@ -1,0 +1,45 @@
+<%= form_for([@adverse_event,@ae_procedure]) do |f| %>
+  <% if @ae_procedure.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@ae_procedure.errors.count, "error") %> prohibited this ae_procedure from being saved:</h2>
+
+      <ul>
+      <% @ae_procedure.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :procedure_price %><br>
+    <%= f.text_field :procedure_price %>
+  </div>
+  <div class="field">
+    <%= f.label :procedure_subtotal %><br>
+    <%= f.text_field :procedure_subtotal %>
+  </div>
+  <div class="field">
+    <%= f.label :procedure_time %><br>
+    <%= f.datetime_select :procedure_time %>
+  </div>
+  <div class="field">
+    <%= f.label :procedure_id %><br>
+    <%= f.text_field :procedure_id %>
+  </div>
+  <div class="field">
+    <%= f.label :service_id %><br>
+    <%= f.text_field :service_id %>
+  </div>
+  <div class="field">
+    <%= f.label :adverse_event_id %><br>
+    <%= f.text_field :adverse_event_id %>
+  </div>
+  <div class="field">
+    <%= f.label :charge_id %><br>
+    <%= f.text_field :charge_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

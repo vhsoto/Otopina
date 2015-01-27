@@ -1,0 +1,41 @@
+<%= form_for([@adverse_event,@hospitalization_day]) do |f| %>
+  <% if @hospitalization_day.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@hospitalization_day.errors.count, "error") %> prohibited this hospitalization_day from being saved:</h2>
+
+      <ul>
+      <% @hospitalization_day.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :qty %><br>
+    <%= f.number_field :qty %>
+  </div>
+  <div class="field">
+    <%= f.label :price %><br>
+    <%= f.text_field :price %>
+  </div>
+  <div class="field">
+    <%= f.label :subtotal %><br>
+    <%= f.text_field :subtotal %>
+  </div>
+  <div class="field">
+    <%= f.label :date %><br>
+    <%= f.date_select :date %>
+  </div>
+  <div class="field">
+    <%= f.label :adverse_event_id %><br>
+    <%= f.text_field :adverse_event_id %>
+  </div>
+  <div class="field">
+    <%= f.label :service_id %><br>
+    <%= f.text_field :service_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

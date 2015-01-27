@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Hum Res Assistances</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Qty</th>
+      <th>Price</th>
+      <th>Time</th>
+      <th>Subtotal</th>
+      <th>Adverse event</th>
+      <th>Service</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @hum_res_assistances.each do |hum_res_assistance| %>
+      <tr>
+        <td><%= hum_res_assistance.name %></td>
+        <td><%= hum_res_assistance.qty %></td>
+        <td><%= hum_res_assistance.price %></td>
+        <td><%= hum_res_assistance.time %></td>
+        <td><%= hum_res_assistance.subtotal %></td>
+        <td><%= hum_res_assistance.adverse_event %></td>
+        <td><%= hum_res_assistance.service %></td>
+        <td><%# link_to 'Show', adverse_event(@adverse_event) %></td>
+        <td><%# link_to 'Edit', edit_adverse_event_hum_res_assistance_path(hum_res_assistance.adverse_event,hum_res_assistance) %></td>
+        <td><%= link_to 'Destroy', hum_res_assistance, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Hum res assistance', new_adverse_event_hum_res_assistance_path(@adverse_event) %>

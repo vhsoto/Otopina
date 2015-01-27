@@ -1,0 +1,59 @@
+<label>Cedula del paciente</label>
+<%= form_tag(search_patients_path, method: :get, remote: true, class: "form-inline") do %>  
+  <div class="form-group"> 
+    <%= text_field_tag "cedula_paciente", nil, placeholder: "Número documento", class: 'form-control' %>
+  </div>
+    <%= submit_tag "Buscar", class: "btn btn-primary" %>      
+<% end %>     
+
+
+<div id="patient_info"> 
+  <!-- Cargo los datos del paciente       -->
+</div>
+<br>
+<%= form_for(@adverse_event) do |f| %>
+  <% if @adverse_event.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@adverse_event.errors.count, "error") %> prohibited this adverse_event from being saved:</h2>
+
+      <ul>
+      <% @adverse_event.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :time %><br>
+    <%= f.datetime_select :time, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :reason_admission %><br>
+    <%= f.text_area :reason_admission, class: "form-control", rows: 3 %>
+  </div>
+  <div class="form-group">
+    <%= f.label :description %><br>
+    <%= f.text_area :description, class: "form-control", rows: 3 %>
+  </div>
+  <div class="form-group">
+    <div class="checkbox">
+      <label>
+        <%= f.check_box :pregnant %>
+        <%= f.label :pregnant, class: "label-control" %><br>
+      </label>      
+    </div>    
+  </div>
+  <div class="form-group">
+    <%= f.label :event_id %><br>
+    <%= collection_select(:adverse_event, :event_id, Event.all, :id, :Detail, class: "form-control") %>
+  </div>
+  <div class="form-group">
+    <%= f.label :branch_office_id %><br>
+    <%= collection_select(:adverse_event, :branch_office_id, BranchOffice.all, :id, :name, class: "form-control")  %>
+  </div>
+  <div>
+    <%= f.submit "Guardar", class: "btn btn-primary btn-sm"  %>
+  </div>
+  <%= f.hidden_field :patient_id %>
+<% end %>

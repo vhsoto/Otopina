@@ -1,0 +1,58 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Document type:</strong>
+  <%= @patient.document_type %>
+</p>
+
+<p>
+  <strong>Document number:</strong>
+  <%= @patient.document_number %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @patient.name %>
+</p>
+
+<p>
+  <strong>Lastname:</strong>
+  <%= @patient.lastname %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @patient.age %>
+</p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= @patient.gender %>
+</p>
+
+<h1>Listing Adverse Events</h1>
+<br>
+<br>
+<br>
+<div class="table-responsive">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Time</th> 
+        <th>Document</th> 
+        <th>Patient name</th>              
+        <th>Pregnant</th>
+        <th>Event</th>        
+        <th>Branch office</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>      
+    <%= render @patient.adverse_events %>
+    </tbody>
+  </table>
+</div>
+
+<%= link_to 'Edit', edit_patient_path(@patient) %> |
+<%= link_to 'Back', patients_path, class: "btn btn-primary btn-sm pull-right" %>

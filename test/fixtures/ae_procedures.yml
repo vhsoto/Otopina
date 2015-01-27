@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  procedure_price: 1.5
+  procedure_subtotal: 1.5
+  procedure_time: 2015-01-21 18:59:28
+  procedure_id: 
+  service_id: 
+  adverse_event_id: 
+  charge_id: 
+
+two:
+  procedure_price: 1.5
+  procedure_subtotal: 1.5
+  procedure_time: 2015-01-21 18:59:28
+  procedure_id: 
+  service_id: 
+  adverse_event_id: 
+  charge_id: 

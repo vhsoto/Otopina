@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @branch_office.name %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @branch_office.city %>
+</p>
+
+<%= link_to 'Edit', edit_branch_office_path(@branch_office) %> |
+<%= link_to 'Back', branch_offices_path %>

@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @hum_res_assistance.name %>
+</p>
+
+<p>
+  <strong>Qty:</strong>
+  <%= @hum_res_assistance.qty %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @hum_res_assistance.price %>
+</p>
+
+<p>
+  <strong>Time:</strong>
+  <%= @hum_res_assistance.time %>
+</p>
+
+<p>
+  <strong>Subtotal:</strong>
+  <%= @hum_res_assistance.subtotal %>
+</p>
+
+<p>
+  <strong>Adverse event:</strong>
+  <%= @hum_res_assistance.adverse_event %>
+</p>
+
+<p>
+  <strong>Service:</strong>
+  <%= @hum_res_assistance.service %>
+</p>
+
+<%= link_to 'Edit', edit_adverse_event_hum_res_assistance_path(@hum_res_assistance.adverse_event,@hum_res_assistance) %> |
+<%= link_to 'Back', adverse_event_hum_res_assistances_path(@adverse_event) %>

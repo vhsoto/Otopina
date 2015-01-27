@@ -1,0 +1,2 @@
+$('#patient_info').replaceWith("<%= escape_javascript(render partial: 'patients/patient', locals: {patient: @patient}) %>");
+$('#adverse_event_patient_id').val(<%= @patient.id %>);

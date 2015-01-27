@@ -1,0 +1,45 @@
+<%= form_for([@adverse_event,@hum_res_assistance]) do |f| %>
+  <% if @hum_res_assistance.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@hum_res_assistance.errors.count, "error") %> prohibited this hum_res_assistance from being saved:</h2>
+
+      <ul>
+      <% @hum_res_assistance.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :qty %><br>
+    <%= f.number_field :qty %>
+  </div>
+  <div class="field">
+    <%= f.label :price %><br>
+    <%= f.text_field :price %>
+  </div>
+  <div class="field">
+    <%= f.label :time %><br>
+    <%= f.datetime_select :time %>
+  </div>
+  <div class="field">
+    <%= f.label :subtotal %><br>
+    <%= f.text_field :subtotal %>
+  </div>
+  <div class="field">
+    <%= f.label :adverse_event_id %><br>
+    <%= f.text_field :adverse_event_id %>
+  </div>
+  <div class="field">
+    <%= f.label :service_id %><br>
+    <%= f.text_field :service_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
