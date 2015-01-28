@@ -1,20 +1,20 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Adverse Events</h1>
+<h1>Lista de eventos adversos</h1>
 <br>
-<%= link_to 'New Adverse event', new_adverse_event_path, class: "btn btn-primary btn-sm" %>
+<%= link_to 'Nuevo evento adverso', new_adverse_event_path, class: "btn btn-primary btn-sm" %>
 <br>
 <br>
 <div class="table-responsive">
   <table class="table table-hover">
     <thead>
       <tr>
-        <th>Time</th> 
-        <th>Document</th> 
-        <th>Patient name</th>              
-        <th>Pregnant</th>
-        <th>Event</th>        
-        <th>Branch office</th>
+        <th>Fecha</th> 
+        <th>Documento</th> 
+        <th>Paciente</th>              
+        <th>Embarazada?</th>
+        <th>Evento</th>        
+        <th>Sucursal</th>
         <th colspan="3"></th>
       </tr>
     </thead>
@@ -36,7 +36,7 @@
             <i class="fa fa-pencil"></i>
             <% end %>
           </td>
-          <td><%= link_to adverse_event, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-sm" do %>
+          <td><%= link_to adverse_event, method: :delete, data: { confirm: '¿Seguro que desea borrar?' }, class: "btn btn-danger btn-sm" do %>
             <i class="fa fa-trash"></i>
             <% end %></td>
         </tr>
@@ -47,4 +47,4 @@
 
 <br>
 
-<%= link_to 'New Adverse event', new_adverse_event_path, class: "btn btn-primary btn-sm" %>
+<%= link_to 'Nuevo evento adverso', new_adverse_event_path, class: "btn btn-primary btn-sm" %>
