@@ -1,6 +1,5 @@
 class AdverseEventsController < ApplicationController
   before_action :set_adverse_event, only: [:show, :edit, :update, :destroy]
-
   # GET /adverse_events
   # GET /adverse_events.json
   def index

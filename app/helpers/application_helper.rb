@@ -13,4 +13,12 @@ module ApplicationHelper
     end
     nil
   end
+
+  def fecha(f)
+    f.strftime("%d/%m/%Y")
+  end
+
+  def hora(h)
+    h.strftime("%I:%M %p")
+  end
 end

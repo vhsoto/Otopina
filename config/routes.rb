@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'welcome/index'
+
+  root 'welcome#index'
+
   resources :adverse_events do
     
     resources :hum_res_assistances
@@ -31,7 +35,5 @@ Rails.application.routes.draw do
   resources :services
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
-
-  
+    
 end

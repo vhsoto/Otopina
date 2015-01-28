@@ -22,7 +22,7 @@
     <tbody>
       <% @adverse_events.each do |adverse_event| %>
         <tr>
-          <td><%= adverse_event.time %></td> 
+          <td><%= fecha adverse_event.time %> <br> <%= hora adverse_event.time %></td> 
           <td><%= adverse_event.patient.document_number %></td>   
           <td><%= adverse_event.patient.name %> <%= adverse_event.patient.lastname %></td>                  
           <td><%= adverse_event.pregnant %></td>
