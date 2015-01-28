@@ -1,17 +1,17 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Ae Procedures</h1>
+<h1>Lista de procedimientos</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Procedure price</th>
-      <th>Procedure subtotal</th>
-      <th>Procedure time</th>
-      <th>Procedure</th>
-      <th>Service</th>
-      <th>Adverse event</th>
-      <th>Charge</th>
+      <th>Precio</th>
+      <th>Subtotal</th>
+      <th>Fecha</th>
+      <th>Procedimiento</th>
+      <th>Servicio</th>
+      <th>Evento adverso</th>
+      <th>Cargo</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -26,9 +26,9 @@
         <td><%= ae_procedure.service %></td>
         <td><%= ae_procedure.adverse_event %></td>
         <td><%= ae_procedure.charge %></td>
-        <td><%# link_to 'Show', ae_procedure %></td>
-        <td><%# link_to 'Edit', edit_ae_procedure_path(ae_procedure) %></td>
-        <td><%= link_to 'Destroy', ae_procedure, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%# link_to 'Ver', ae_procedure %></td>
+        <td><%# link_to 'Editar', edit_ae_procedure_path(ae_procedure) %></td>
+        <td><%= link_to 'Eliminar', ae_procedure, method: :delete, data: { confirm: '¿Está seguro que quiere eliminar?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -36,4 +36,4 @@
 
 <br>
 
-<%= link_to 'New Ae procedure', new_adverse_event_ae_procedure_path(@adverse_event) %>
+<%= link_to 'Crear procedimiento', new_adverse_event_ae_procedure_path(@adverse_event) %>

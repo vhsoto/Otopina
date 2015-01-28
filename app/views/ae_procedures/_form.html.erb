@@ -12,34 +12,34 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :procedure_price %><br>
+    <%= f.label :procedure_price, "Precio" %><br>
     <%= f.text_field :procedure_price %>
   </div>
   <div class="field">
-    <%= f.label :procedure_subtotal %><br>
+    <%= f.label :procedure_subtotal, "Subtotal" %><br>
     <%= f.text_field :procedure_subtotal %>
   </div>
   <div class="field">
-    <%= f.label :procedure_time %><br>
+    <%= f.label :procedure_time, "Fecha" %><br>
     <%= f.datetime_select :procedure_time %>
   </div>
   <div class="field">
-    <%= f.label :procedure_id %><br>
+    <%= f.label :procedure_id, "Procedimiento" %><br>
     <%= f.text_field :procedure_id %>
   </div>
   <div class="field">
-    <%= f.label :service_id %><br>
+    <%= f.label :service_id, "Servicio" %><br>
     <%= f.text_field :service_id %>
   </div>
   <div class="field">
-    <%= f.label :adverse_event_id %><br>
+    <%= f.label :adverse_event_id, "Evento adverso" %><br>
     <%= f.text_field :adverse_event_id %>
   </div>
   <div class="field">
-    <%= f.label :charge_id %><br>
+    <%= f.label :charge_id, "Cargo" %><br>
     <%= f.text_field :charge_id %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Guardar" %>
   </div>
 <% end %>

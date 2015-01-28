@@ -1,12 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Events</h1>
+<h1>Lista de eventos</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Detail</th>
-      <th>Event category</th>
+      <th>Detalle</th>
+      <th>Categoría evento</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,9 +16,9 @@
       <tr>
         <td><%= event.Detail %></td>
         <td><%= event.event_category %></td>
-        <td><%= link_to 'Show', event %></td>
-        <td><%= link_to 'Edit', edit_event_path(event) %></td>
-        <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Ver', event %></td>
+        <td><%= link_to 'Editar', edit_event_path(event) %></td>
+        <td><%= link_to 'Eliminar', event, method: :delete, data: { confirm: '¿Está seguro que quiere eliminar?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New Event', new_event_path %>
+<%= link_to 'Crear evento', new_event_path %>

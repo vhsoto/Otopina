@@ -1,12 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Branch Offices</h1>
+<h1>Lista de sucursales</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Name</th>
-      <th>City</th>
+      <th>Nombre</th>
+      <th>Ciudad</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,9 +16,9 @@
       <tr>
         <td><%= branch_office.name %></td>
         <td><%= branch_office.city %></td>
-        <td><%= link_to 'Show', branch_office %></td>
-        <td><%= link_to 'Edit', edit_branch_office_path(branch_office) %></td>
-        <td><%= link_to 'Destroy', branch_office, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Ver', branch_office %></td>
+        <td><%= link_to 'Editar', edit_branch_office_path(branch_office) %></td>
+        <td><%= link_to 'Eliminar', branch_office, method: :delete, data: { confirm: '¿Está seguro que quiere eliminar?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New Branch office', new_branch_office_path %>
+<%= link_to 'Crear sucursal', new_branch_office_path %>

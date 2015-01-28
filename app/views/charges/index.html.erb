@@ -1,11 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Charges</h1>
+<h1>Lista de cargos</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Name</th>
+      <th>Nombre</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -14,9 +14,9 @@
     <% @charges.each do |charge| %>
       <tr>
         <td><%= charge.name %></td>
-        <td><%= link_to 'Show', charge %></td>
-        <td><%= link_to 'Edit', edit_charge_path(charge) %></td>
-        <td><%= link_to 'Destroy', charge, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Ver', charge %></td>
+        <td><%= link_to 'Editar', edit_charge_path(charge) %></td>
+        <td><%= link_to 'Eliminar', charge, method: :delete, data: { confirm: '¿Está seguro que quiere eliminar?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -24,4 +24,4 @@
 
 <br>
 
-<%= link_to 'New Charge', new_charge_path %>
+<%= link_to 'Crear cargo', new_charge_path %>

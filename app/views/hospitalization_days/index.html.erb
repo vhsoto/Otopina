@@ -1,16 +1,16 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Hospitalization Days</h1>
+<h1>Lista de días de estancia</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Qty</th>
-      <th>Price</th>
+      <th>Cantidad</th>
+      <th>Precio</th>
       <th>Subtotal</th>
-      <th>Date</th>
-      <th>Adverse event</th>
-      <th>Service</th>
+      <th>Fecha</th>
+      <th>Evento adverso</th>
+      <th>Servicio</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -24,9 +24,9 @@
         <td><%= hospitalization_day.date %></td>
         <td><%= hospitalization_day.adverse_event %></td>
         <td><%= hospitalization_day.service %></td>
-        <td><%# link_to 'Show', hospitalization_day %></td>
-        <td><%# link_to 'Edit', edit_hospitalization_day_path(hospitalization_day) %></td>
-        <td><%= link_to 'Destroy', hospitalization_day, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%# link_to 'Ver', hospitalization_day %></td>
+        <td><%# link_to 'Editar', edit_hospitalization_day_path(hospitalization_day) %></td>
+        <td><%= link_to 'Eliminar', hospitalization_day, method: :delete, data: { confirm: '¿Está seguro que quiere eliminar?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -34,4 +34,4 @@
 
 <br>
 
-<%= link_to 'New Hospitalization day', new_adverse_event_hospitalization_day_path(@adverse_event) %>
+<%= link_to 'Crear día de estancia', new_adverse_event_hospitalization_day_path(@adverse_event) %>

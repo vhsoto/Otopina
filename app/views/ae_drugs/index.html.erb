@@ -1,18 +1,18 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Ae Drugs</h1>
+<h1>Listado de medicamentos</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Drug price</th>
-      <th>Drug subtotal</th>
-      <th>Drug time</th>
-      <th>Qty</th>
-      <th>Adverse event</th>
-      <th>Drug</th>
-      <th>Service</th>
-      <th>Charge</th>
+      <th>Precio</th>
+      <th>Subtotal</th>
+      <th>Fecha</th>
+      <th>Cantidad</th>
+      <th>Evento adverso</th>
+      <th>Medicamento</th>
+      <th>Servicio</th>
+      <th>Cargo</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -28,9 +28,9 @@
         <td><%= ae_drug.drug %></td>
         <td><%= ae_drug.service %></td>
         <td><%= ae_drug.charge %></td>
-        <td><%# link_to 'Show', ae_drug %></td>
-        <td><%# link_to 'Edit', edit_ae_drug_path(ae_drug) %></td>
-        <td><%= link_to 'Destroy', ae_drug, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%# link_to 'Ver', ae_drug %></td>
+        <td><%# link_to 'Editar', edit_ae_drug_path(ae_drug) %></td>
+        <td><%= link_to 'Eliminar', ae_drug, method: :delete, data: { confirm: '¿Está seguro que quiere eliminar?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -38,4 +38,4 @@
 
 <br>
 
-<%= link_to 'New Ae drug', new_ae_drug_path %>
+<%= link_to 'Nuevo medicamento', new_ae_drug_path %>

@@ -1,44 +1,44 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Drug price:</strong>
+  <strong>Precio:</strong>
   <%= @ae_drug.drug_price %>
 </p>
 
 <p>
-  <strong>Drug subtotal:</strong>
+  <strong>Subtotal:</strong>
   <%= @ae_drug.drug_subtotal %>
 </p>
 
 <p>
-  <strong>Drug time:</strong>
+  <strong>Fecha:</strong>
   <%= @ae_drug.drug_time %>
 </p>
 
 <p>
-  <strong>Qty:</strong>
+  <strong>Cantidad:</strong>
   <%= @ae_drug.qty %>
 </p>
 
 <p>
-  <strong>Adverse event:</strong>
+  <strong>Evento adverso:</strong>
   <%= @ae_drug.adverse_event %>
 </p>
 
 <p>
-  <strong>Drug:</strong>
+  <strong>Medicamento:</strong>
   <%= @ae_drug.drug %>
 </p>
 
 <p>
-  <strong>Service:</strong>
+  <strong>Servicio:</strong>
   <%= @ae_drug.service_id %>
 </p>
 
 <p>
-  <strong>Charge:</strong>
+  <strong>Cargo:</strong>
   <%= @ae_drug.charge %>
 </p>
 
-<%= link_to 'Edit', edit_adverse_event_ae_drug_path(@ae_drug.adverse_event,@ae_drug) %> |
-<%= link_to 'Back', adverse_event_path(@adverse_event) %>
+<%= link_to 'Editar', edit_adverse_event_ae_drug_path(@ae_drug.adverse_event,@ae_drug) %> |
+<%= link_to 'Atrás', adverse_event_path(@adverse_event) %>

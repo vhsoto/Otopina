@@ -1,12 +1,12 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Document type:</strong>
+  <strong>Tipo de documento:</strong>
   <%= @patient.document_type %>
 </p>
 
 <p>
-  <strong>Document number:</strong>
+  <strong>Número de documento:</strong>
   <%= @patient.document_number %>
 </p>
 
@@ -21,16 +21,16 @@
 </p>
 
 <p>
-  <strong>Age:</strong>
+  <strong>Edad:</strong>
   <%= @patient.age %>
 </p>
 
 <p>
-  <strong>Gender:</strong>
+  <strong>Género:</strong>
   <%= @patient.gender %>
 </p>
 
-<h1>Listing Adverse Events</h1>
+<h1>Lista de eventos adversos</h1>
 <br>
 <br>
 <br>
@@ -38,12 +38,12 @@
   <table class="table table-hover">
     <thead>
       <tr>
-        <th>Time</th> 
-        <th>Document</th> 
-        <th>Patient name</th>              
-        <th>Pregnant</th>
-        <th>Event</th>        
-        <th>Branch office</th>
+        <th>Fecha</th> 
+        <th>Documento</th> 
+        <th>Nombre</th>              
+        <th>Embarazada</th>
+        <th>Evento</th>        
+        <th>Sucursal</th>
         <th colspan="3"></th>
       </tr>
     </thead>
@@ -54,5 +54,5 @@
   </table>
 </div>
 
-<%= link_to 'Edit', edit_patient_path(@patient) %> |
-<%= link_to 'Back', patients_path, class: "btn btn-primary btn-sm pull-right" %>
+<%= link_to 'Editar', edit_patient_path(@patient) %> |
+<%= link_to 'Atrás', patients_path, class: "btn btn-primary btn-sm pull-right" %>

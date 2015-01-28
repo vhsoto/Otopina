@@ -1,4 +1,4 @@
-<h1>Adverse event detail</h1>
+<h1>Detalle de evento adverso</h1>
 <div class="panel panel-default">
   <div class="panel-heading">
     <h3 class="panel-title"><strong><%= @adverse_event.patient.document_number %> <%= @adverse_event.patient.name %> <%= @adverse_event.patient.lastname %></strong>
@@ -9,12 +9,12 @@
       <table class="table">
         <thead>
           <tr>
-            <th>Time</th>
-            <th>Reason admission</th>
-            <th>Description</th>
-            <th>Pregnant</th>
-            <th>Event category</th>
-            <th>Event</th>
+            <th>Fecha</th>
+            <th>Razón de admisión</th>
+            <th>Descripción</th>
+            <th>Embarazada</th>
+            <th>Categoría del evento</th>
+            <th>Evento</th>
             <th colspan="3"></th>
           </tr>
         </thead>
@@ -38,7 +38,7 @@
 </div>
 
 
-<h3>Drugs</h3>
+<h3>Medicamentos</h3>
 <%= link_to new_adverse_event_ae_drug_path(@adverse_event), class: "btn btn-primary btn-sm" do %>
   <i class="fa fa-file-text"><span>  Agregar Medicamento</span></i>  
 <% end %>  
@@ -46,12 +46,12 @@
   <table class="table table-striped">
     <thead>
       <tr>
-        <th>Time</th>
-        <th>Drug</th>
-        <th>Price</th>
-        <th>Quantity</th>
-        <th>Charge</th>
-        <th>Service</th>
+        <th>Fecha</th>
+        <th>Medicamento</th>
+        <th>Precio</th>
+        <th>Cantidad</th>
+        <th>Cargo</th>
+        <th>Servicio</th>
         <th>Subtotal</th>
         <th colspan="3"></th>
       </tr>
@@ -64,19 +64,19 @@
 
 
 
-<h3>Procedures</h3>
+<h3>Procedimientos</h3>
 <%= link_to new_adverse_event_ae_procedure_path(@adverse_event), class: "btn btn-primary btn-sm" do %>
   <i class="fa fa-file-text"><span>  Agregar procedimiento</span></i>  
 <% end %>  
 <%= render @adverse_event.ae_procedures %>
 
-<h3>Human resource assistances</h3>
+<h3>Recursos humanos asistenciales</h3>
 <%= link_to new_adverse_event_hum_res_assistance_path(@adverse_event), class: "btn btn-primary btn-sm" do %>
   <i class="fa fa-file-text"><span>  Agregar Recurso humano asistencial</span></i>  
 <% end %>  
 <%= render @adverse_event.hum_res_assistances %>
 
-<h3>Hospitalization days</h3>
+<h3>Días de estancia</h3>
 <%= link_to new_adverse_event_hospitalization_day_path(@adverse_event), class: "btn btn-primary btn-sm" do %>
   <i class="fa fa-file-text"><span>  Agregar Día de estancia</span></i>  
 <% end %>  
@@ -84,5 +84,5 @@
 
 <br>
 <br>
-<%= link_to 'Back', adverse_events_path, class: "btn btn-primary btn-sm" %>
+<%= link_to 'Atrás', adverse_events_path, class: "btn btn-primary btn-sm" %>
 <br><br>

@@ -12,30 +12,30 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :document_type %><br>
+    <%= f.label :document_type, "Tipo de documento" %><br>
     <%= f.text_field :document_type %>
   </div>
   <div class="field">
-    <%= f.label :document_number %><br>
+    <%= f.label :document_number, "Número de documento" %><br>
     <%= f.text_field :document_number %>
   </div>
   <div class="field">
-    <%= f.label :name %><br>
+    <%= f.label :name, "Nombres" %><br>
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :lastname %><br>
+    <%= f.label :lastname, "Apellidos" %><br>
     <%= f.text_field :lastname %>
   </div>
   <div class="field">
-    <%= f.label :age %><br>
+    <%= f.label :age, "Edad" %><br>
     <%= f.number_field :age %>
   </div>
   <div class="field">
-    <%= f.label :gender %><br>
+    <%= f.label :gender, "Género" %><br>
     <%= f.text_field :gender %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Guardar" %>
   </div>
 <% end %>

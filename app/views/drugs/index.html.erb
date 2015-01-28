@@ -1,13 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Drugs</h1>
+<h1>Listado de medicamentos</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Code</th>
-      <th>Name</th>
-      <th>Price</th>
+      <th>Código</th>
+      <th>Nombre</th>
+      <th>Precio</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,9 +18,9 @@
         <td><%= drug.code %></td>
         <td><%= drug.name %></td>
         <td><%= drug.price %></td>
-        <td><%= link_to 'Show', drug %></td>
-        <td><%= link_to 'Edit', edit_drug_path(drug) %></td>
-        <td><%= link_to 'Destroy', drug, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Ver', drug %></td>
+        <td><%= link_to 'Editar', edit_drug_path(drug) %></td>
+        <td><%= link_to 'Eliminar', drug, method: :delete, data: { confirm: '¿Está seguro que quiere eliminar?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +28,4 @@
 
 <br>
 
-<%= link_to 'New Drug', new_drug_path %>
+<%= link_to 'Nuevo medicamento', new_drug_path %>

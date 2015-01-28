@@ -12,38 +12,38 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :drug_price %><br>
+    <%= f.label :drug_price, "Precio" %><br>
     <%= f.text_field :drug_price %>
   </div>
   <div class="field">
-    <%= f.label :drug_subtotal %><br>
+    <%= f.label :drug_subtotal, "Subtotal" %><br>
     <%= f.text_field :drug_subtotal %>
   </div>
   <div class="field">
-    <%= f.label :drug_time %><br>
+    <%= f.label :drug_time, "Fecha" %><br>
     <%= f.datetime_select :drug_time %>
   </div>
   <div class="field">
-    <%= f.label :qty %><br>
+    <%= f.label :qty, "Cantidad" %><br>
     <%= f.number_field :qty %>
   </div>
   <div class="field">
-    <%= f.label :adverse_event_id %><br>
+    <%= f.label :adverse_event_id, "Evento adverso" %><br>
     <%= f.text_field :adverse_event_id %>
   </div>
   <div class="field">
-    <%= f.label :drug_id %><br>
+    <%= f.label :drug_id, "Medicamento" %><br>
     <%= f.text_field :drug_id %>
   </div>
   <div class="field">
-    <%= f.label :service_id %><br>
+    <%= f.label :service_id, "Servicio" %><br>
     <%= f.text_field :service_id %>
   </div>
   <div class="field">
-    <%= f.label :charge_id %><br>
+    <%= f.label :charge_id, "Cargo" %><br>
     <%= f.text_field :charge_id %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Guardar" %>
   </div>
 <% end %>

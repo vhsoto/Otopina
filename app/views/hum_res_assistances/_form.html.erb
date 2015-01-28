@@ -12,19 +12,19 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br>
+    <%= f.label :name, "Nombre" %><br>
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :qty %><br>
+    <%= f.label :qty, "Cantidad" %><br>
     <%= f.number_field :qty %>
   </div>
   <div class="field">
-    <%= f.label :price %><br>
+    <%= f.label :price, "Precio" %><br>
     <%= f.text_field :price %>
   </div>
   <div class="field">
-    <%= f.label :time %><br>
+    <%= f.label :time, "Fecha" %><br>
     <%= f.datetime_select :time %>
   </div>
   <div class="field">
@@ -32,14 +32,14 @@
     <%= f.text_field :subtotal %>
   </div>
   <div class="field">
-    <%= f.label :adverse_event_id %><br>
+    <%= f.label :adverse_event_id, "Evento adverso" %><br>
     <%= f.text_field :adverse_event_id %>
   </div>
   <div class="field">
-    <%= f.label :service_id %><br>
+    <%= f.label :service_id, "Servicio" %><br>
     <%= f.text_field :service_id %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Guardar" %>
   </div>
 <% end %>
