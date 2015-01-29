@@ -1,31 +1,61 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Listado de medicamentos</h1>
+<br>
+<%= link_to 'Nuevo medicamento', new_drug_path, class: "btn btn-primary" %> <%= link_to root_path, class: "btn btn-primary pull-right" do %>
+  <i class="fa fa-home"></i>
+<% end %>
+<br>
+<br>
 
-<table>
-  <thead>
-    <tr>
-      <th>Código</th>
-      <th>Nombre</th>
-      <th>Precio</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<h4>Subir archivo plano de medicamentos</h4>
+<br>
+<%= form_tag import_drugs_path, multipart: true do %>
+<div class="form-group">
+  <div class="row">
+    <div class="col-md-4 col-lg-4">
+      <%= file_field_tag :file %>
+      <p class="help-block">Nota: La extensión del archivo debe ser .csv.</p>
+    </div>
+  </div>
+</div>  
+<%= submit_tag "cargar medicamentos", class: "btn btn-info btn-sm" %>
+<% end %>
+<br>
+<br>
 
-  <tbody>
-    <% @drugs.each do |drug| %>
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
       <tr>
-        <td><%= drug.code %></td>
-        <td><%= drug.name %></td>
-        <td><%= drug.price %></td>
-        <td><%= link_to 'Ver', drug %></td>
-        <td><%= link_to 'Editar', edit_drug_path(drug) %></td>
-        <td><%= link_to 'Eliminar', drug, method: :delete, data: { confirm: '¿Está seguro que quiere eliminar?' } %></td>
+        <th>Código</th>
+        <th>Nombre</th>
+        <th>Precio</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+
+    <tbody>
+      <% @drugs.each do |drug| %>
+        <tr>
+          <td><%= drug.code %></td>
+          <td><%= drug.name %></td>
+          <td><%= drug.price %></td>          
+          <td><%= link_to edit_drug_path(drug), class: "btn btn-info btn-sm" do %>
+                <i class="fa fa-pencil"></i>
+              <% end %>
+          </td>
+          <td><%= link_to drug, method: :delete, data: { confirm: '¿Está seguro que quiere eliminar?' }, class: "btn btn-danger btn-sm" do %>
+                <i class="fa fa-trash"></i>
+              <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<br>
+<%= link_to 'Nuevo medicamento', new_drug_path, class: "btn btn-primary" %>
 
 <br>
 
-<%= link_to 'Nuevo medicamento', new_drug_path %>
+
+

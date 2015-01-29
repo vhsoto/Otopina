@@ -61,6 +61,11 @@ class DrugsController < ApplicationController
     end
   end
 
+  def import
+    Drug.import(params[:file])
+    redirect_to drugs_path, notice: "Archivo plano subido con éxito"
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_drug

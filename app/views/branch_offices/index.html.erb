@@ -1,29 +1,38 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Lista de sucursales</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Nombre</th>
-      <th>Ciudad</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @branch_offices.each do |branch_office| %>
+<br>
+<%= link_to 'Crear sucursal', new_branch_office_path, class: "btn btn-primary" %> <%= link_to root_path, class: "btn btn-primary pull-right"  do%>
+  <i class="fa fa-home"></i>
+<% end %>
+<br>
+<br>
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
       <tr>
-        <td><%= branch_office.name %></td>
-        <td><%= branch_office.city %></td>
-        <td><%= link_to 'Ver', branch_office %></td>
-        <td><%= link_to 'Editar', edit_branch_office_path(branch_office) %></td>
-        <td><%= link_to 'Eliminar', branch_office, method: :delete, data: { confirm: '¿Está seguro que quiere eliminar?' } %></td>
+        <th>Nombre</th>
+        <th>Ciudad</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+
+    <tbody>
+      <% @branch_offices.each do |branch_office| %>
+        <tr>
+          <td><%= branch_office.name %></td>
+          <td><%= branch_office.city %></td>
+          <td class="pull-right"><%= link_to edit_branch_office_path(branch_office), class: "btn btn-info btn-sm" do %>
+                <i class="fa fa-pencil"></i>
+              <% end %>
+            <%= link_to branch_office, method: :delete, data: { confirm: '¿Está seguro que quiere eliminar?' }, class: "btn btn-danger btn-sm" do %>
+                <i class="fa fa-trash"></i>
+              <% end %>
+          </td>         
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 
 <br>
 
-<%= link_to 'Crear sucursal', new_branch_office_path %>
+<%= link_to 'Crear sucursal', new_branch_office_path, class: "btn btn-primary" %>

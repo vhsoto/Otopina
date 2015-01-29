@@ -22,7 +22,7 @@
 
 <p>
   <strong>Servicio:</strong>
-  <%= @ae_procedure.service %>
+  <%= @ae_procedure.service.name %>
 </p>
 
 <p>
@@ -32,7 +32,7 @@
 
 <p>
   <strong>Cargo:</strong>
-  <%= @ae_procedure.charge %>
+  <%= @ae_procedure.charge.name %>
 </p>
 
 <%= link_to 'Editar', edit_adverse_event_ae_procedure_path(@ae_procedure.adverse_event,@ae_procedure) %>

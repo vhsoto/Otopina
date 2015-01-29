@@ -1,29 +1,52 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Lista de procedimientos</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Nombre</th>
-      <th>Código</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @procedures.each do |procedure| %>
+<br>
+<%= link_to 'Crear procedimiento', new_procedure_path, class: "btn btn-primary" %> <%= link_to root_path, class: "btn btn-primary pull-right" do %>
+  <i class="fa fa-home"></i>
+<% end %>
+<br>
+<br>
+<h4>Subir archivo plano de procedimientos</h4>
+<br>
+<%= form_tag import_procedures_path, multipart: true do %>
+<div class="form-group">
+  <div class="row">
+    <div class="col-md-4 col-lg-4">
+      <%= file_field_tag :file %>
+      <p class="help-block">Nota: La extensión del archivo debe ser .csv.</p>
+    </div>
+  </div>
+</div>  
+<%= submit_tag "Cargar procedimientos", class: "btn btn-info btn-sm" %>
+<% end %>
+<br>
+<br>
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
       <tr>
-        <td><%= procedure.name %></td>
-        <td><%= procedure.code %></td>
-        <td><%= link_to 'Ver', procedure %></td>
-        <td><%= link_to 'Editar', edit_procedure_path(procedure) %></td>
-        <td><%= link_to 'Eliminar', procedure, method: :delete, data: { confirm: '¿Está seguro que desea eliminar?' } %></td>
+        <th>Nombre</th>
+        <th>Código</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+
+    <tbody>
+      <% @procedures.each do |procedure| %>
+        <tr>          
+          <td><%= procedure.code %></td>  
+          <td><%= procedure.name %></td>        
+          <td><%= link_to edit_procedure_path(procedure) , class: "btn btn-info btn-sm" do %>
+                <i class="fa fa-pencil"></i>
+              <% end %></td>
+          <td><%= link_to procedure, method: :delete, data: { confirm: '¿Está seguro que desea eliminar?' } , class: "btn btn-danger btn-sm" do %>
+                <i class="fa fa-trash"></i>
+              <% end %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 
 <br>
 
-<%= link_to 'Crear procedimiento', new_procedure_path %>
+<%= link_to 'Crear procedimiento', new_procedure_path, class: "btn btn-primary" %>

@@ -1,9 +1,45 @@
-<p id="notice"><%= notice %></p>
+<h1>Categoría del evento</h1>
+<br>
+<%= link_to 'Atrás', event_categories_path, class: "btn btn-primary btn-sm" %>
+<br>
+<br>
+<div class="table-responsive">
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>Nombre</th>
+				<th colspan="3"></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td><%= @event_category.name %></td>
+				<td class="pull-right"><%= link_to edit_event_category_path(@event_category), class: "btn btn-info btn-sm" do %>
+		                <i class="fa fa-pencil"></i>  
+		            <% end %>
+		        </td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<br>
+<h3>Detalle</h3>
+<%= link_to new_event_category_event_path(@event_category), class: "btn btn-primary btn-sm" do %>
+  <i class="fa fa-file-text"><span>  Agregar detalle</span></i>  
+<% end %>  
+<div class="table-responsive">
+	<table class="table">
+		<thead>
+			<tr>
+				<th></th>
+				<th colspan="3"></th>
+			</tr>
+		</thead>
+		<tbody>
+			<%= render @event_category.events %>
+		</tbody>
+	</table>
+</div>
+<br>
 
-<p>
-  <strong>Nombre:</strong>
-  <%= @event_category.name %>
-</p>
-
-<%= link_to 'Editar', edit_event_category_path(@event_category) %> |
-<%= link_to 'Atrás', event_categories_path %>
+<%= link_to 'Atrás', event_categories_path, class: "btn btn-primary btn-sm" %>

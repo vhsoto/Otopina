@@ -1,14 +1,9 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <strong>Detalle:</strong>
   <%= @event.Detail %>
 </p>
 
-<p>
-  <strong>Categoría evento:</strong>
-  <%= @event.event_category %>
-</p>
 
-<%= link_to 'Editar', edit_event_path(@event) %> |
-<%= link_to 'Atrás', events_path %>
+
+<%= link_to 'Editar', edit_event_category_event_path(@event.event_category,@event_category) %> |
+<%= link_to 'Atrás', event_category_path(@event_category) %>

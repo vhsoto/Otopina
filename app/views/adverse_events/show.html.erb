@@ -1,7 +1,10 @@
 <h1>Detalle de evento adverso</h1>
+<br>
+<%= link_to 'Atrás', adverse_events_path, class: "btn btn-primary btn-sm" %>
+<br><br>
 <div class="panel panel-default">
   <div class="panel-heading">
-    <h3 class="panel-title"><strong><%= @adverse_event.patient.document_number %> <%= @adverse_event.patient.name %> <%= @adverse_event.patient.lastname %></strong>
+    <h3 class="panel-title"><strong><%= @adverse_event.patient.document_number %> - <%= @adverse_event.patient.name %> <%= @adverse_event.patient.lastname %></strong>
     <span class="label label-success pull-right"><%= @adverse_event.branch_office.name %></span></h3>
   </div>
   <div class="panel-body">
@@ -9,28 +12,42 @@
       <table class="table">
         <thead>
           <tr>
-            <th>Fecha</th>
-            <th>Razón de admisión</th>
-            <th>Descripción</th>
+            <th>Fecha</th>            
             <th>Embarazada</th>
             <th>Categoría del evento</th>
             <th>Evento</th>
             <th colspan="3"></th>
-          </tr>
+          </tr>          
         </thead>
         <tbody>
           <tr>
-            <td><%= @adverse_event.time %></td>
-            <td><%= @adverse_event.reason_admission %></td>
-            <td><%= @adverse_event.description %></td>
-            <td><%= @adverse_event.pregnant %></td>
-            <td><%= @adverse_event.event.event_category_id %></td>
+            <td><%= fecha @adverse_event.time %> <br> <%= hora @adverse_event.time %></td>            
+            <td class="text-center">
+              <% if @adverse_event.pregnant == true %>
+              <span class="label label-danger">SI</span>
+              <% else %>
+              <span class="label label-success">NO</span>
+              <% end %>
+            </td>
+            <td><%= @adverse_event.event.event_category.name %></td>
             <td><%= @adverse_event.event.Detail %></td>
             <td><%= link_to edit_adverse_event_path(@adverse_event), class: "btn btn-info btn-sm" do %>
               <i class="fa fa-pencil"></i>
               <% end %>
             </td>
           </tr>
+        </tbody>
+      </table>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Razón de admisión</th>
+            <th>Descripción</th>
+          </tr>
+        </thead>
+        <tbody>
+          <td><%= @adverse_event.reason_admission %></td>
+          <td><%= @adverse_event.description %></td>
         </tbody>
       </table>
     </div>
@@ -68,20 +85,68 @@
 <%= link_to new_adverse_event_ae_procedure_path(@adverse_event), class: "btn btn-primary btn-sm" do %>
   <i class="fa fa-file-text"><span>  Agregar procedimiento</span></i>  
 <% end %>  
-<%= render @adverse_event.ae_procedures %>
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Tiempo</th>
+        <th>Procedimiento</th>
+        <th>Precio</th>
+        <th>Servicio</th>
+        <th>Cargo</th>        
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render @adverse_event.ae_procedures %>
+    </tbody>
+  </table>
+</div>
 
 <h3>Recursos humanos asistenciales</h3>
 <%= link_to new_adverse_event_hum_res_assistance_path(@adverse_event), class: "btn btn-primary btn-sm" do %>
   <i class="fa fa-file-text"><span>  Agregar Recurso humano asistencial</span></i>  
 <% end %>  
-<%= render @adverse_event.hum_res_assistances %>
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Fecha</th>
+        <th>Nombre</th>
+        <th>Cantidad</th>
+        <th>Precio</th>
+        <th>Servicio</th>
+        <th>Subtotal</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render @adverse_event.hum_res_assistances %>
+    </tbody>
+  </table>
+</div>
 
 <h3>Días de estancia</h3>
 <%= link_to new_adverse_event_hospitalization_day_path(@adverse_event), class: "btn btn-primary btn-sm" do %>
   <i class="fa fa-file-text"><span>  Agregar Día de estancia</span></i>  
 <% end %>  
-<%= render @adverse_event.hospitalization_days %>
-
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Fecha</th>
+        <th>Cantidad</th>
+        <th>Precio</th>
+        <th>Servicio</th>
+        <th>Subtotal</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render @adverse_event.hospitalization_days %>
+    </tbody>
+  </table>
+</div>
 <br>
 <br>
 <%= link_to 'Atrás', adverse_events_path, class: "btn btn-primary btn-sm" %>

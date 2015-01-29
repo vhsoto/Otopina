@@ -61,6 +61,11 @@ class ProceduresController < ApplicationController
     end
   end
 
+  def import
+    Procedure.import(params[:file])
+    redirect_to procedures_path, notice: "Archivo plano subido con éxito"
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_procedure

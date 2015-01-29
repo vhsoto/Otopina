@@ -14,15 +14,21 @@ Rails.application.routes.draw do
     resources :ae_procedures
   end  
 
-  resources :events
+  
 
   resources :branch_offices
 
-  resources :event_categories
+  resources :event_categories do
+
+    resources :events
+    
+  end
 
   resources :charges
 
-  resources :drugs
+  resources :drugs do 
+    collection { post :import }
+  end
 
   resources :patients do
     collection do
@@ -30,7 +36,9 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :procedures
+  resources :procedures do 
+    collection { post :import }
+  end
 
   resources :services
 

@@ -1,37 +1,53 @@
-<p id="notice"><%= notice %></p>
+<h1>Lista de pacientes</h1> 
+<br>
+<%= link_to 'Crear paciente', new_patient_path, class: "btn btn-primary" %> <%= link_to root_path, class: "btn btn-primary pull-right"  do %>
+    <i class="fa fa-home"></i>
+<% end %>
+<br>
+<br>
 
-<h1>Lista de pacientes</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Tipo de documento</th>
-      <th>Número de documento</th>
-      <th>Nombres</th>
-      <th>Apellidos</th>
-      <th>Edad</th>
-      <th>Género</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @patients.each do |patient| %>
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
       <tr>
-        <td><%= patient.document_type %></td>
-        <td><%= patient.document_number %></td>
-        <td><%= patient.name %></td>
-        <td><%= patient.lastname %></td>
-        <td><%= patient.age %></td>
-        <td><%= patient.gender %></td>
-        <td><%= link_to 'Ver', patient %></td>
-        <td><%= link_to 'Editar', edit_patient_path(patient) %></td>
-        <td><%= link_to 'Eliminar', patient, method: :delete, data: { confirm: '¿Está seguro que desea eliminar?' } %></td>
+        <th>Tipo de documento</th>
+        <th>Número de documento</th>
+        <th>Nombres</th>
+        <th>Apellidos</th>
+        <th>Edad</th>
+        <th>Género</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+
+    <tbody>
+      <% @patients.each do |patient| %>
+        <tr>
+          <td><%= patient.document_type %></td>
+          <td><%= patient.document_number %></td>
+          <td><%= patient.name %></td>
+          <td><%= patient.lastname %></td>
+          <td><%= patient.age %></td>
+          <td><%= patient.gender %></td>
+          <td><%= link_to patient , class: "btn btn-primary btn-sm" do %>
+            <i class="fa fa-search"></i>
+            <% end %>
+          </td>
+          <td><%= link_to edit_patient_path(patient) , class: "btn btn-info btn-sm" do %>
+            <i class="fa fa-pencil"></i>
+            <% end %>
+          </td>
+          <td><%= link_to patient, method: :delete, data: { confirm: '¿Está seguro que desea eliminar?' } , class: "btn btn-danger btn-sm" do %>
+            <i class="fa fa-trash"></i>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
 
 <br>
 
-<%= link_to 'Crear paciente', new_patient_path %>
+<%= link_to 'Crear paciente', new_patient_path, class: "btn btn-primary" %>

@@ -7,7 +7,7 @@
 <% end %>     
 
 
-<div id="patient_info"> 
+  <div id="patient_info"> 
   <!-- Cargo los datos del paciente       -->
 </div>
 <br>
@@ -29,12 +29,20 @@
     <%= f.datetime_select :time, class: "form-control" %>
   </div>
   <div class="form-group">
-    <%= f.label :reason_admission, "Razón de admisión:" %><br>
-    <%= f.text_area :reason_admission, class: "form-control", rows: 3 %>
+    <div class="row">
+      <div class="col-md-5 col-lg-5">
+        <%= f.label :reason_admission, "Razón de admisión:" %><br>
+        <%= f.text_area :reason_admission, class: "form-control", rows: 3 %>
+      </div>
+    </div>    
   </div>
   <div class="form-group">
-    <%= f.label :description, "Descripción" %><br>
-    <%= f.text_area :description, class: "form-control", rows: 3 %>
+    <div class="row">
+      <div class="col-md-5 col-lg-5">
+        <%= f.label :description, "Descripción" %><br>
+        <%= f.text_area :description, class: "form-control", rows: 3 %>
+      </div>
+    </div>    
   </div>
   <div class="form-group">
     <div class="checkbox">

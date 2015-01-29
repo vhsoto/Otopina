@@ -43,7 +43,7 @@ class AeProceduresController < ApplicationController
   def update
     respond_to do |format|
       if @ae_procedure.update(ae_procedure_params)
-        format.html { redirect_to adverse_event(@adverse_event), notice: 'Ae procedure was successfully updated.' }
+        format.html { redirect_to adverse_event_path(@adverse_event), notice: 'Ae procedure was successfully updated.' }
         format.json { render :show, status: :ok, location: @ae_procedure }
       else
         format.html { render :edit }

@@ -11,39 +11,56 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :drug_price, "Precio" %><br>
-    <%= f.text_field :drug_price %>
+  <div class="form-group">
+    <div class="row">
+      <div class="col-md-4 col-lg-4">
+        <%= f.label :drug_time, "Fecha" %><br>
+    <%= f.datetime_select :drug_time, class: "form-control" %>
+      </div>
+    </div>    
   </div>
-  <div class="field">
-    <%= f.label :drug_subtotal, "Subtotal" %><br>
-    <%= f.text_field :drug_subtotal %>
+  <div class="form-group">
+    <div class="row">
+      <div class="col-md-4 col-lg-4">
+        <%= f.label :drug_id, "Medicamento" %><br>
+        <%= collection_select(:ae_drug, :drug_id, Drug.all, :id, :name, class: "form-control") %>
+      </div>
+    </div>    
   </div>
-  <div class="field">
-    <%= f.label :drug_time, "Fecha" %><br>
-    <%= f.datetime_select :drug_time %>
+  <div class="form-group">
+    <div class="row">
+      <div class="col-md-1 col-lg-1">
+        <%= f.label :qty, "Cantidad" %><br>
+        <%= f.number_field :qty, class: "form-control" %>
+      </div>
+    </div>    
   </div>
-  <div class="field">
-    <%= f.label :qty, "Cantidad" %><br>
-    <%= f.number_field :qty %>
-  </div>
-  <div class="field">
-    <%= f.label :adverse_event_id, "Evento adverso" %><br>
-    <%= f.text_field :adverse_event_id %>
-  </div>
-  <div class="field">
-    <%= f.label :drug_id, "Medicamento" %><br>
-    <%= f.text_field :drug_id %>
-  </div>
-  <div class="field">
-    <%= f.label :service_id, "Servicio" %><br>
-    <%= f.text_field :service_id %>
-  </div>
-  <div class="field">
-    <%= f.label :charge_id, "Cargo" %><br>
-    <%= f.text_field :charge_id %>
-  </div>
+  <!-- <div class="form-group">
+    <div class="row">
+      <div class="col-md-4 col-lg-4">
+        <%= f.label :drug_price, "Precio" %><br>
+        <%= f.text_field :drug_price %>
+      </div>
+    </div>    
+  </div> -->
+  <div class="form-group">
+    <div class="row">
+      <div class="col-md-4 col-lg-4">
+        <%= f.label :service_id, "Servicio" %><br>
+        <%= collection_select(:ae_drug, :service_id, Service.all, :id, :name, class: "form-control") %>
+      </div>
+    </div>    
+  </div>  
+  <div class="form-group">
+    <div class="row">
+      <div class="col-md-4 col-lg-4">
+        <%= f.label :charge_id, "Cargo" %><br>
+        <%= collection_select(:ae_drug, :charge_id, Charge.all, :id, :name, class: "form-control") %>
+      </div>
+    </div>    
+  </div>  
   <div class="actions">
-    <%= f.submit "Guardar" %>
+    <%= f.submit "Guardar", class: "btn btn-primary" %>
   </div>
+  <%= f.hidden_field :adverse_event_id %>
 <% end %>

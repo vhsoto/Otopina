@@ -1,38 +1,13 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Precio:</strong>
-  <%= ae_procedure.procedure_price %>
-</p>
-
-<p>
-  <strong>Subtotal:</strong>
-  <%= ae_procedure.procedure_subtotal %>
-</p>
-
-<p>
-  <strong>Tiempo:</strong>
-  <%= ae_procedure.procedure_time %>
-</p>
-
-<p>
-  <strong>Procedimiento:</strong>
-  <%= ae_procedure.procedure %>
-</p>
-
-<p>
-  <strong>Servicio:</strong>
-  <%= ae_procedure.service_id %>
-</p>
-
-<p>
-  <strong>Evento adverso:</strong>
-  <%= ae_procedure.adverse_event %>
-</p>
-
-<p>
-  <strong>Cargo:</strong>
-  <%= ae_procedure.charge %>
-</p>
-
-<%= link_to 'Editar', edit_adverse_event_ae_procedure_path(ae_procedure.adverse_event,ae_procedure) %>
+      <tr>
+        <td><%= fecha ae_procedure.procedure_time %> <br> <%= hora ae_procedure.procedure_time %></td>
+        <td><%= ae_procedure.procedure.name %></td>
+        <td><%= ae_procedure.procedure_price %></td>
+        <td><%= ae_procedure.service.name %></td>
+        <td><%= ae_procedure.charge.name %></td>        
+        <td class="pull-right"><%= link_to edit_adverse_event_ae_procedure_path(ae_procedure.adverse_event,ae_procedure), class: "btn btn-info btn-sm" do %>
+              <i class="fa fa-pencil"></i>
+            <% end %>
+        </td>
+      </tr>
+    

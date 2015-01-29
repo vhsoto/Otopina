@@ -1,13 +1,13 @@
 <tr>
-        <td><%= ae_drug.drug_time %></td>
-        <td><%= ae_drug.drug %></td>
-        <td><%= ae_drug.drug_price %></td>
-        <td><%= ae_drug.qty %></td>
-        <td><%= ae_drug.charge %></td>
-        <td><%= ae_drug.service_id %></td>
-        <td><%= ae_drug.drug_subtotal %></td>
-        <td><%= link_to edit_adverse_event_ae_drug_path(ae_drug.adverse_event,ae_drug), class: "btn btn-info btn-sm" do %>
-          <i class="fa fa-pencil"></i>
-          <% end %>
-        </td>
-      </tr> 
+  <td><%= fecha ae_drug.drug_time %> <br> <%= hora ae_drug.drug_time %></td>
+  <td><%= ae_drug.drug.name %></td>
+  <td><%= ae_drug.qty %></td>
+  <td><%= ae_drug.drug_price %></td>
+  <td><%= ae_drug.service.name %></td>
+  <td><%= ae_drug.charge.name %></td>  
+  <td><%= ae_drug.drug_subtotal %></td>
+  <td clas="pull-right"><%= link_to edit_adverse_event_ae_drug_path(ae_drug.adverse_event,ae_drug), class: "btn btn-info btn-sm" do %>
+    <i class="fa fa-pencil"></i>
+    <% end %>
+  </td>
+</tr> 

@@ -29,7 +29,7 @@ class HumResAssistancesController < ApplicationController
 
     respond_to do |format|
       if @hum_res_assistance.save
-        format.html { redirect_to adverse_event(@adverse_event), notice: 'Hum res assistance was successfully created.' }
+        format.html { redirect_to adverse_event_path(@adverse_event), notice: 'Hum res assistance was successfully created.' }
         format.json { render :show, status: :created, location: @hum_res_assistance }
       else
         format.html { render :new }

@@ -11,31 +11,55 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :document_type, "Tipo de documento" %><br>
-    <%= f.text_field :document_type %>
+  <div class="form-group">
+    <div class="row">
+      <div class="col-md-3 col-lg-3">
+        <%= f.label :document_type, "Tipo de documento" %><br>
+        <%= f.select :document_type,  options_for_select([['NN', 'NN'], ['Cédula', 'Cédula'], ['Tarjeta identidad', 'Tarjeta identidad'], ['Pasaporte', 'Pasaporte'], ['NUIP', 'NUIP']]), class: "form-control" %>
+      </div>
+    </div>    
   </div>
-  <div class="field">
-    <%= f.label :document_number, "Número de documento" %><br>
-    <%= f.text_field :document_number %>
+  <div class="form-group"> 
+    <div class="row">
+       <div class="col-sm-3 col-md-3 col-lg-3">
+          <%= f.label :document_number, "Número de documento" %><br>
+          <%= f.text_field :document_number, class: "form-control" %>
+       </div>
+     </div>         
   </div>
-  <div class="field">
-    <%= f.label :name, "Nombres" %><br>
-    <%= f.text_field :name %>
+  <div class="form-group">
+    <div class="row">
+      <div class="col-md-3 col-lg-3">
+        <%= f.label :name, "Nombres" %><br>
+        <%= f.text_field :name, class: "form-control" %>
+      </div>
+    </div>    
   </div>
-  <div class="field">
-    <%= f.label :lastname, "Apellidos" %><br>
-    <%= f.text_field :lastname %>
+  <div class="form-group">
+    <div class="row">
+      <div class="col-md-3 col-lg-3">
+        <%= f.label :lastname, "Apellidos" %><br>
+        <%= f.text_field :lastname, class: "form-control" %>
+      </div>
+    </div>    
   </div>
-  <div class="field">
-    <%= f.label :age, "Edad" %><br>
-    <%= f.number_field :age %>
+  <div class="form-group">
+    <div class="row">
+      <div class="col-md-2 col-lg-2">
+        <%= f.label :age, "Edad" %><br>
+        <%= f.number_field :age, class: "form-control" %>
+      </div>
+    </div>    
   </div>
-  <div class="field">
-    <%= f.label :gender, "Género" %><br>
-    <%= f.text_field :gender %>
+  <div class="form-group">
+    <div class="row">
+      <div class="col-md-3 col-lg-3">
+        <%= f.label :gender, "Género" %><br>
+        <%= f.select :gender,  options_for_select([['Masculino', 'Masculino'], ['Femenino', 'Femenino']]), class: "form-control" %> 
+      </div>
+    </div>    
   </div>
   <div class="actions">
-    <%= f.submit "Guardar" %>
+    <%= f.submit "Guardar", class: "btn btn-primary" %>
   </div>
 <% end %>

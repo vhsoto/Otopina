@@ -1,38 +1,14 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Nombre:</strong>
-  <%= hum_res_assistance.name %>
-</p>
-
-<p>
-  <strong>Cantidad:</strong>
-  <%= hum_res_assistance.qty %>
-</p>
-
-<p>
-  <strong>Precio:</strong>
-  <%= hum_res_assistance.price %>
-</p>
-
-<p>
-  <strong>Fecha:</strong>
-  <%= hum_res_assistance.time %>
-</p>
-
-<p>
-  <strong>Subtotal:</strong>
-  <%= hum_res_assistance.subtotal %>
-</p>
-
-<p>
-  <strong>Evento adverso:</strong>
-  <%= hum_res_assistance.adverse_event %>
-</p>
-
-<p>
-  <strong>Servicio:</strong>
-  <%= hum_res_assistance.service %>
-</p>
-
-<%= link_to 'Editar', edit_adverse_event_hum_res_assistance_path(hum_res_assistance.adverse_event,hum_res_assistance) %>
+      <tr>
+        <td><%= fecha hum_res_assistance.time %> <br> <%= hora hum_res_assistance.time %></td>
+        <td><%= hum_res_assistance.name %></td>
+        <td><%= hum_res_assistance.qty %> horas</td>
+        <td><%= hum_res_assistance.price %></td>
+        <td><%= hum_res_assistance.service.name %></td>
+        <td><%= hum_res_assistance.subtotal %></td>
+        <td class="pull-right"><%= link_to edit_adverse_event_hum_res_assistance_path(hum_res_assistance.adverse_event,hum_res_assistance), class: "btn btn-info btn-sm" do %>
+              <i class="fa fa-pencil"></i>
+            <% end %>
+        </td>
+      </tr>
+    

@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Lista de procedimientos</h1>
 
 <table>
@@ -28,7 +26,7 @@
         <td><%= ae_procedure.charge %></td>
         <td><%# link_to 'Ver', ae_procedure %></td>
         <td><%# link_to 'Editar', edit_ae_procedure_path(ae_procedure) %></td>
-        <td><%= link_to 'Eliminar', ae_procedure, method: :delete, data: { confirm: '¿Está seguro que quiere eliminar?' } %></td>
+        <td><%= link_to 'Eliminar', adverse_event_ae_procedure_path(@adverse_event), method: :delete, data: { confirm: '¿Está seguro que quiere eliminar?' } %></td>
       </tr>
     <% end %>
   </tbody>

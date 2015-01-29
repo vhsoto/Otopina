@@ -1,27 +1,36 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Lista de cargos</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Nombre</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @charges.each do |charge| %>
+<br>
+<%= link_to 'Crear cargo', new_charge_path, class: "btn btn-primary" %> <%= link_to root_path, class: "btn btn-primary pull-right"  do%>
+  <i class="fa fa-home"></i>
+<% end %>
+<br>
+<br>
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
       <tr>
-        <td><%= charge.name %></td>
-        <td><%= link_to 'Ver', charge %></td>
-        <td><%= link_to 'Editar', edit_charge_path(charge) %></td>
-        <td><%= link_to 'Eliminar', charge, method: :delete, data: { confirm: '¿Está seguro que quiere eliminar?' } %></td>
+        <th>Nombre</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
+    <tbody>
+      <% @charges.each do |charge| %>
+        <tr>
+          <td><%= charge.name %></td>
+          <td class="pull-right">
+              <%= link_to edit_charge_path(charge), class: "btn btn-info btn-sm" do %>
+                <i class="fa fa-pencil"></i>
+              <% end %>
+              <%= link_to charge, method: :delete, data: { confirm: '¿Está seguro que quiere eliminar?' }  , class: "btn btn-danger btn-sm" do %>
+                <i class="fa fa-trash"></i>
+              <% end %>
+          </td>          
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 <br>
 
-<%= link_to 'Crear cargo', new_charge_path %>
+<%= link_to 'Crear cargo', new_charge_path, class: "btn btn-primary" %>

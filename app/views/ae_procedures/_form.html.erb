@@ -10,36 +10,57 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :procedure_price, "Precio" %><br>
-    <%= f.text_field :procedure_price %>
+  
+  <div class="form-group">
+    <div class="row">
+      <div class="col-md-4 col-lg-4">
+        <%= f.label :procedure_time, "Fecha" %><br>
+        <%= f.datetime_select :procedure_time, class: "form-control" %>
+      </div>
+    </div>    
   </div>
-  <div class="field">
-    <%= f.label :procedure_subtotal, "Subtotal" %><br>
-    <%= f.text_field :procedure_subtotal %>
+  <div class="form-group">
+    <div class="row">
+      <div class="col-md-7 col-lg-7">
+        <%= f.label :procedure_id, "Procedimiento" %><br>
+        <%= collection_select(:ae_procedure, :procedure_id, Procedure.all, :id, :name, class: "form-control") %>
+      </div>
+    </div>    
   </div>
-  <div class="field">
-    <%= f.label :procedure_time, "Fecha" %><br>
-    <%= f.datetime_select :procedure_time %>
-  </div>
-  <div class="field">
-    <%= f.label :procedure_id, "Procedimiento" %><br>
-    <%= f.text_field :procedure_id %>
-  </div>
-  <div class="field">
-    <%= f.label :service_id, "Servicio" %><br>
-    <%= f.text_field :service_id %>
-  </div>
-  <div class="field">
-    <%= f.label :adverse_event_id, "Evento adverso" %><br>
-    <%= f.text_field :adverse_event_id %>
-  </div>
-  <div class="field">
-    <%= f.label :charge_id, "Cargo" %><br>
-    <%= f.text_field :charge_id %>
+  <div class="form-group">
+    <div class="row">
+      <div class="col-md-2 col-lg-2">
+        <%= f.label :procedure_price, "Precio" %><br>
+        <%= f.text_field :procedure_price, class: "form-control" %>
+      </div>
+    </div>    
+  </div>  
+  <div class="form-group">
+    <div class="row">
+      <div class="col-md-4 col-lg-4">
+        <%= f.label :service_id, "Servicio" %><br>
+        <%= collection_select(:ae_procedure, :service_id, Service.all, :id, :name, class: "form-control") %>
+      </div>
+    </div>    
+  </div>  
+  <div class="form-group">
+    <div class="row">
+      <div class="col-md-4 col-lg-4">
+        <%= f.label :charge_id, "Cargo" %><br>
+        <%= collection_select(:ae_procedure, :charge_id, Charge.all, :id, :name, class: "form-control") %>
+      </div>
+    </div>    
   </div>
   <div class="actions">
-    <%= f.submit "Guardar" %>
+    <%= f.submit "Guardar", class: "btn btn-primary" %>
   </div>
+  <%= f.hidden_field :adverse_event_id %>
+  <!-- <div class="form-group">
+    <div class="row">
+      <div class="col-md-4 col-lg-4">
+        <%= f.label :procedure_subtotal, "Subtotal" %><br>
+    <%= f.text_field :procedure_subtotal %>
+      </div>
+    </div>    
+  </div> -->
 <% end %>
