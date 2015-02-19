@@ -17,11 +17,15 @@ class AdverseEventsController < ApplicationController
     @branch_offices = BranchOffice.all
     @event_categories = EventCategory.all
     @events = Event.all 
+    @ae_drugs = AeDrug.all
   end
 
   # GET /adverse_events/new
   def new
     @adverse_event = AdverseEvent.new
+    unless params[:patient_id].nil?
+      @patient = Patient.find(params[:patient_id])
+    end
   end
 
   # GET /adverse_events/1/edit

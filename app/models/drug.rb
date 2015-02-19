@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: drugs
+#
+#  id         :integer          not null, primary key
+#  code       :string
+#  name       :string
+#  price      :float
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 class Drug < ActiveRecord::Base
 	require 'csv'
 	def self.import(file)
@@ -14,4 +26,8 @@ class Drug < ActiveRecord::Base
 	end
 
 	has_many :ae_drugs, dependent: :destroy	
+
+	validates_presence_of :code
+	validates_presence_of :name
+	validates_presence_of :price
 end

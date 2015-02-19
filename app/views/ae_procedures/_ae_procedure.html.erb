@@ -1,11 +1,11 @@
-
       <tr>
         <td><%= fecha ae_procedure.procedure_time %> <br> <%= hora ae_procedure.procedure_time %></td>
         <td><%= ae_procedure.procedure.name %></td>
-        <td><%= ae_procedure.procedure_price %></td>
+        <td><%= number_to_currency(ae_procedure.procedure_price, delimiter: ".") %></td>
         <td><%= ae_procedure.service.name %></td>
-        <td><%= ae_procedure.charge.name %></td>        
-        <td class="pull-right"><%= link_to edit_adverse_event_ae_procedure_path(ae_procedure.adverse_event,ae_procedure), class: "btn btn-info btn-sm" do %>
+        <td><%= ae_procedure.charge.name %></td>   
+        <td><%= number_to_currency(ae_procedure.procedure_price, delimiter: ".") %></td>     
+        <td ><%= link_to edit_adverse_event_ae_procedure_path(ae_procedure.adverse_event,ae_procedure), class: "btn btn-info btn-sm pull-right" do %>
               <i class="fa fa-pencil"></i>
             <% end %>
         </td>

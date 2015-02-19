@@ -3,10 +3,10 @@
         <td><%= fecha hum_res_assistance.time %> <br> <%= hora hum_res_assistance.time %></td>
         <td><%= hum_res_assistance.name %></td>
         <td><%= hum_res_assistance.qty %> horas</td>
-        <td><%= hum_res_assistance.price %></td>
+        <td><%= number_to_currency(hum_res_assistance.price, delimiter: ".") %></td>
         <td><%= hum_res_assistance.service.name %></td>
-        <td><%= hum_res_assistance.subtotal %></td>
-        <td class="pull-right"><%= link_to edit_adverse_event_hum_res_assistance_path(hum_res_assistance.adverse_event,hum_res_assistance), class: "btn btn-info btn-sm" do %>
+        <td><%= number_to_currency(hum_res_assistance.subtotal, delimiter: ".") %></td>
+        <td><%= link_to edit_adverse_event_hum_res_assistance_path(hum_res_assistance.adverse_event,hum_res_assistance), class: "btn btn-info btn-sm pull-right" do %>
               <i class="fa fa-pencil"></i>
             <% end %>
         </td>

@@ -1,3 +1,4 @@
+<h4><span class="label label-success"><%= @adverse_event.patient.document_number %> <%= @adverse_event.patient.name %> <%= @adverse_event.patient.lastname %></span></h4>
 <%= form_for([@adverse_event,@ae_drug]) do |f| %>
   <% if @ae_drug.errors.any? %>
     <div id="error_explanation">
@@ -15,7 +16,7 @@
     <div class="row">
       <div class="col-md-4 col-lg-4">
         <%= f.label :drug_time, "Fecha" %><br>
-    <%= f.datetime_select :drug_time, class: "form-control" %>
+        <%= f.datetime_select :drug_time, class: "form-control" %>
       </div>
     </div>    
   </div>
@@ -23,7 +24,7 @@
     <div class="row">
       <div class="col-md-4 col-lg-4">
         <%= f.label :drug_id, "Medicamento" %><br>
-        <%= collection_select(:ae_drug, :drug_id, Drug.all, :id, :name, class: "form-control") %>
+        <%= collection_select(:ae_drug, :drug_id, Drug.all, :id, :name, {}, class: "form-control") %>
       </div>
     </div>    
   </div>
@@ -47,7 +48,7 @@
     <div class="row">
       <div class="col-md-4 col-lg-4">
         <%= f.label :service_id, "Servicio" %><br>
-        <%= collection_select(:ae_drug, :service_id, Service.all, :id, :name, class: "form-control") %>
+        <%= collection_select(:ae_drug, :service_id, Service.all, :id, :name, {}, class: "form-control") %>
       </div>
     </div>    
   </div>  
@@ -55,12 +56,12 @@
     <div class="row">
       <div class="col-md-4 col-lg-4">
         <%= f.label :charge_id, "Cargo" %><br>
-        <%= collection_select(:ae_drug, :charge_id, Charge.all, :id, :name, class: "form-control") %>
+        <%= collection_select(:ae_drug, :charge_id, Charge.all, :id, :name, {}, class: "form-control") %>
       </div>
     </div>    
   </div>  
   <div class="actions">
-    <%= f.submit "Guardar", class: "btn btn-primary" %>
-  </div>
+    <%= f.submit "Guardar", class: "btn btn-primary btn-sm" %>
+  
   <%= f.hidden_field :adverse_event_id %>
 <% end %>

@@ -1,6 +1,6 @@
 <h1>Datos del paciente</h1>
 <br>
-<%= link_to 'Atrás', patients_path, class: "btn btn-primary btn-sm" %>
+<%= link_to 'Atrás', patients_path, class: "btn btn-primary btn-sm" %> <%= link_to 'Crear evento adverso', new_adverse_event_path(patient_id: @patient.id), class: "btn btn-info btn-sm" %>
 <br>
 <br>
 <div class="table-responsive">
@@ -57,3 +57,4 @@
 </div>
 
 <%= link_to 'Atrás', patients_path, class: "btn btn-primary btn-sm" %>
+<br>

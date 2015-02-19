@@ -66,8 +66,13 @@ class PatientsController < ApplicationController
     cedula = params[:cedula_paciente]
     @patient = Patient.find_by(document_number: cedula)
     respond_to do |format|
-      format.html { render :show }
-      format.js
+      if @patient.nil?
+        format.html { render :notfound}
+        format.js { render :notfound}
+      else
+        format.html { render :show }
+        format.js
+      end
     end
   end
 

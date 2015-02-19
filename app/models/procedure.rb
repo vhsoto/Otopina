@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: procedures
+#
+#  id         :integer          not null, primary key
+#  name       :string
+#  code       :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 class Procedure < ActiveRecord::Base
 	require 'csv'
 	def self.import(file)
@@ -13,4 +24,7 @@ class Procedure < ActiveRecord::Base
 		end
 	end
 	has_many :ae_procedures, dependent: :destroy
+
+	validates_presence_of :name
+	validates_presence_of :code
 end

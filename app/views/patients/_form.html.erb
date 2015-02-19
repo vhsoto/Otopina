@@ -15,7 +15,7 @@
     <div class="row">
       <div class="col-md-3 col-lg-3">
         <%= f.label :document_type, "Tipo de documento" %><br>
-        <%= f.select :document_type,  options_for_select([['NN', 'NN'], ['Cédula', 'Cédula'], ['Tarjeta identidad', 'Tarjeta identidad'], ['Pasaporte', 'Pasaporte'], ['NUIP', 'NUIP']]), class: "form-control" %>
+        <%= f.select :document_type,  options_for_select([['NN', 'NN'], ['Cédula', 'Cédula'], ['Tarjeta identidad', 'Tarjeta identidad'], ['Pasaporte', 'Pasaporte'], ['NUIP', 'NUIP']], @patient.document_type), {},class: "form-control" %>
       </div>
     </div>    
   </div>
@@ -55,11 +55,10 @@
     <div class="row">
       <div class="col-md-3 col-lg-3">
         <%= f.label :gender, "Género" %><br>
-        <%= f.select :gender,  options_for_select([['Masculino', 'Masculino'], ['Femenino', 'Femenino']]), class: "form-control" %> 
+        <%= f.select :gender,  options_for_select([['Masculino', 'Masculino'], ['Femenino', 'Femenino']], @patient.gender), {}, class: "form-control" %> 
       </div>
     </div>    
   </div>
-  <div class="actions">
+  <div>
     <%= f.submit "Guardar", class: "btn btn-primary" %>
-  </div>
 <% end %>

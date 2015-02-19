@@ -2,13 +2,12 @@
       <tr>
         <td><%= fecha hospitalization_day.date %></td>
         <td><%= hospitalization_day.qty %></td>
-        <td><%= hospitalization_day.price %></td>
+        <td><%= number_to_currency(hospitalization_day.price, delimiter: ".") %></td>
         <td><%= hospitalization_day.service.name %></td>
-        <td><%= hospitalization_day.subtotal %></td>
-        <td class="pull-right"><%= link_to edit_adverse_event_hospitalization_day_path(hospitalization_day.adverse_event,hospitalization_day), class: "btn btn-info btn-sm" do %>
+        <td><%= number_to_currency(hospitalization_day.subtotal, delimiter: ".") %></td>
+        <td><%= link_to edit_adverse_event_hospitalization_day_path(hospitalization_day.adverse_event,hospitalization_day), class: "btn btn-info btn-sm pull-right" do %>
           <i class="fa fa-pencil"></i>
           <% end %>
-        </td>
-        <td></td>
+        </td>        
       </tr>
     
