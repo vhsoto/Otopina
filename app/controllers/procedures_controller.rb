@@ -62,8 +62,12 @@ class ProceduresController < ApplicationController
   end
 
   def import
-    Procedure.import(params[:file])
-    redirect_to procedures_path, notice: "Archivo plano subido con éxito"
+    begin
+      Procedure.import(params[:file])
+      redirect_to procedures_path, notice: "Archivo plano subido con éxito"
+    rescue
+      redirect_to procedures_path, notice: "Formato CSV no valido."
+    end
   end
 
   private

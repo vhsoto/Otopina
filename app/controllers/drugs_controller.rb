@@ -62,8 +62,12 @@ class DrugsController < ApplicationController
   end
 
   def import
-    Drug.import(params[:file])
-    redirect_to drugs_path, notice: "Archivo plano subido con éxito"
+    begin
+      Drug.import(params[:file])
+      redirect_to drugs_path, notice: "Archivo plano subido con éxito"
+    rescue
+      redirect_to drugs_path, notice: "Formato CSV no valido."
+    end
   end
 
   private
