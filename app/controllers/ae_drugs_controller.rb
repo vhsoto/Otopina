@@ -29,7 +29,7 @@ class AeDrugsController < ApplicationController
 
     respond_to do |format|
       if @ae_drug.save
-        format.html { redirect_to adverse_event_path(@adverse_event), notice: 'Ae drug was successfully created.' }
+        format.html { redirect_to adverse_event_path(@adverse_event), notice: 'Medicamento suministrado, ingresado satisfactoriamente.' }
         format.json { render :show, status: :created, location: @ae_drug }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class AeDrugsController < ApplicationController
   def update
     respond_to do |format|
       if @ae_drug.update(ae_drug_params)
-        format.html { redirect_to adverse_event_path(@adverse_event), notice: 'Ae drug was successfully updated.' }
+        format.html { redirect_to adverse_event_path(@adverse_event), notice: 'Medicamento suministrado, actualizado satisfactoriamente.' }
         format.json { render :show, status: :ok, location: @ae_drug }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class AeDrugsController < ApplicationController
   def destroy
     @ae_drug.destroy
     respond_to do |format|
-      format.html { redirect_to ae_drugs_url, notice: 'Ae drug was successfully destroyed.' }
+      format.html { redirect_to ae_drugs_url, notice: 'Medicamento suministrado, eliminado satisfactoriamente.' }
       format.json { head :no_content }
     end
   end

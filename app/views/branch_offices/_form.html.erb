@@ -1,7 +1,7 @@
 <%= form_for(@branch_office) do |f| %>
   <% if @branch_office.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@branch_office.errors.count, "error") %> prohibited this branch_office from being saved:</h2>
+      <h2><%= pluralize(@branch_office.errors.count, "error") %> y la sede no puede ser guardado:</h2>
 
       <ul>
       <% @branch_office.errors.full_messages.each do |message| %>

@@ -37,7 +37,7 @@
             <i class="fa fa-pencil"></i>
             <% end %>
           </td>
-          <td><%= link_to patient, method: :delete, data: { confirm: '¿Está seguro que desea eliminar?' } , class: "btn btn-danger btn-sm" do %>
+          <td><%= link_to patient, method: :delete, data: { confirm: '¿Está seguro(a) que desea eliminar?' } , class: "btn btn-danger btn-sm" do %>
             <i class="fa fa-trash"></i>
             <% end %>
           </td>
@@ -50,4 +50,7 @@
 
 <br>
 
-<%= link_to 'Crear paciente', new_patient_path, class: "btn btn-primary" %>
+<%= link_to 'Crear paciente', new_patient_path, class: "btn btn-primary btn-sm" %> <%= link_to root_path, class: "btn btn-primary btn-sm pull-right"  do%>
+  <i class="fa fa-home"></i>
+<% end %>
+<br><br>

@@ -47,3 +47,5 @@ end
 gem 'annotate'
 
 gem "font-awesome-rails"
+
+gem 'rails-i18n', '~> 4.0.0'

@@ -25,6 +25,7 @@ class AdverseEventsController < ApplicationController
     @adverse_event = AdverseEvent.new
     unless params[:patient_id].nil?
       @patient = Patient.find(params[:patient_id])
+      @adverse_event.patient = @patient
     end
   end
 
@@ -39,7 +40,7 @@ class AdverseEventsController < ApplicationController
 
     respond_to do |format|
       if @adverse_event.save
-        format.html { redirect_to @adverse_event, notice: 'Adverse event was successfully created.' }
+        format.html { redirect_to @adverse_event, notice: 'Evento adverso creado satisfactoriamente.' }
         format.json { render :show, status: :created, location: @adverse_event }
       else
         format.html { render :new }
@@ -52,9 +53,8 @@ class AdverseEventsController < ApplicationController
   # PATCH/PUT /adverse_events/1.json
   def update
     respond_to do |format|
-      if @adverse_event.update(adverse_event_params)
-        flash[:success] = "Woohoo!"
-        format.html { redirect_to @adverse_event }
+      if @adverse_event.update(adverse_event_params)        
+        format.html { redirect_to @adverse_event, notice: 'Evento adverso actualizado satisfactoriamente.' }
         format.json { render :show, status: :ok, location: @adverse_event }
       else
         format.html { render :edit }
@@ -68,7 +68,7 @@ class AdverseEventsController < ApplicationController
   def destroy
     @adverse_event.destroy
     respond_to do |format|
-      format.html { redirect_to adverse_events_url, notice: 'Adverse event was successfully destroyed.' }
+      format.html { redirect_to adverse_events_url, notice: 'Evento adverso eliminado satisfactoriamente.' }
       format.json { head :no_content }
     end
   end

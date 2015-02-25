@@ -1,6 +1,8 @@
 <h1>Detalle de evento adverso</h1>
 <br>
-<%= link_to 'Atrás', adverse_events_path, class: "btn btn-primary btn-sm" %>
+<%= link_to 'Atrás', adverse_events_path, class: "btn btn-primary btn-sm" %> <%= link_to root_path, class: "btn btn-primary pull-right"  do%>
+  <i class="fa fa-home"></i>
+<% end %>
 <br><br>
 <div class="panel panel-default">
   <div class="panel-heading">
@@ -13,7 +15,7 @@
         <thead>
           <tr>
             <th>Fecha</th>            
-            <th>Embarazada</th>
+            <th class="text-center">Embarazada</th>
             <th>Categoría del evento</th>
             <th>Evento</th>
             <th colspan="3"></th>
@@ -23,11 +25,7 @@
           <tr>
             <td><%= fecha @adverse_event.time %> <br> <%= hora @adverse_event.time %></td>            
             <td class="text-center">
-              <% if @adverse_event.pregnant %>
-              <span class="label label-danger">SI</span>
-              <% else %>
-              <span class="label label-success">NO</span>
-              <% end %>
+              <%= @adverse_event.pregnant ? embarazada : no_embarazada %>             
             </td>
             <td><%= @adverse_event.event.event_category.name %></td>
             <td><%= @adverse_event.event.Detail %></td>
@@ -57,7 +55,7 @@
 
 <h3>Medicamentos</h3>
 <%= link_to new_adverse_event_ae_drug_path(@adverse_event), class: "btn btn-primary btn-sm" do %>
-  <i class="fa fa-file-text"><span>  Agregar Medicamento</span></i>  
+  <i class="fa fa-plus-circle"><span></span>  Agregar Medicamento</i> 
 <% end %>  
 <div class="table-responsive">
   <table class="table">
@@ -82,7 +80,7 @@
         <td></td>
         <td></td>
         <td><span class="label label-info">Total:</span></td>
-        <td><%= number_to_currency(AeDrug.sum(:drug_subtotal), delimiter: ".") %></td>
+        <td><%= number_to_currency(@adverse_event.ae_drugs.sum(:drug_subtotal), delimiter: ".") %></td>
         <td></td>
       </tr>
     </tbody>
@@ -93,7 +91,7 @@
 
 <h3>Procedimientos</h3>
 <%= link_to new_adverse_event_ae_procedure_path(@adverse_event), class: "btn btn-primary btn-sm" do %>
-  <i class="fa fa-file-text"><span>  Agregar procedimiento</span></i>  
+  <i class="fa fa-plus-circle"><span></span>  Agregar procedimiento</i>  
 <% end %>  
 <div class="table-responsive">
   <table class="table">
@@ -116,7 +114,7 @@
         <td></td>
         <td></td>
         <td><span class="label label-info">Total:</span></td>
-        <td><%= number_to_currency(AeProcedure.sum(:procedure_price), delimiter: ".") %></td>
+        <td><%= number_to_currency(@adverse_event.ae_procedures.sum(:procedure_price), delimiter: ".") %></td>
         <td></td>
       </tr>
     </tbody>
@@ -125,7 +123,7 @@
 
 <h3>Recursos humanos asistenciales</h3>
 <%= link_to new_adverse_event_hum_res_assistance_path(@adverse_event), class: "btn btn-primary btn-sm" do %>
-  <i class="fa fa-file-text"><span>  Agregar Recurso humano asistencial</span></i>  
+  <i class="fa fa-plus-circle"><span></span>  Agregar Recurso humano asistencial</i>  
 <% end %>  
 <div class="table-responsive">
   <table class="table">
@@ -148,7 +146,7 @@
         <td></td>
         <td></td>
         <td><span class="label label-info">Total:</span></td>
-        <td><%= number_to_currency(HumResAssistance.sum(:subtotal), delimiter: ".") %></td>
+        <td><%= number_to_currency(@adverse_event.hum_res_assistances.sum(:subtotal), delimiter: ".") %></td>
         <td></td>
       </tr>
     </tbody>
@@ -157,7 +155,7 @@
 
 <h3>Días de estancia</h3>
 <%= link_to new_adverse_event_hospitalization_day_path(@adverse_event), class: "btn btn-primary btn-sm" do %>
-  <i class="fa fa-file-text"><span>  Agregar Día de estancia</span></i>  
+  <i class="fa fa-plus-circle"><span></span>  Agregar Día de estancia</i>  
 <% end %>  
 <div class="table-responsive">
   <table class="table">
@@ -178,7 +176,7 @@
         <td></td>
         <td></td>
         <td><span class="label label-info">Total:</span></td>
-        <td><%= number_to_currency(HospitalizationDay.sum(:subtotal), delimiter: ".") %></td>
+        <td><%= number_to_currency(@adverse_event.hospitalization_days.sum(:subtotal), delimiter: ".") %></td>
         <td></td>
       </tr>
     </tbody>
@@ -186,5 +184,7 @@
 </div>
 <br>
 <br>
-<%= link_to 'Atrás', adverse_events_path, class: "btn btn-primary btn-sm" %>
+<%= link_to 'Atrás', adverse_events_path, class: "btn btn-primary btn-sm" %> <%= link_to root_path, class: "btn btn-primary btn-sm pull-right"  do%>
+  <i class="fa fa-home"></i>
+<% end %>
 <br><br>

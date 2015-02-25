@@ -29,7 +29,7 @@ class HospitalizationDaysController < ApplicationController
 
     respond_to do |format|
       if @hospitalization_day.save
-        format.html { redirect_to adverse_event_path(@adverse_event), notice: 'Hospitalization day was successfully created.' }
+        format.html { redirect_to adverse_event_path(@adverse_event), notice: 'Día de estancia ingresado satisfactoriamente.' }
         format.json { render :show, status: :created, location: @hospitalization_day }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class HospitalizationDaysController < ApplicationController
   def update
     respond_to do |format|
       if @hospitalization_day.update(hospitalization_day_params)
-        format.html { redirect_to adverse_event_path(@adverse_event), notice: 'Hospitalization day was successfully updated.' }
+        format.html { redirect_to adverse_event_path(@adverse_event), notice: 'Día de estancia actualizado satisfactoriamente.' }
         format.json { render :show, status: :ok, location: @hospitalization_day }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class HospitalizationDaysController < ApplicationController
   def destroy
     @hospitalization_day.destroy
     respond_to do |format|
-      format.html { redirect_to hospitalization_days_url, notice: 'Hospitalization day was successfully destroyed.' }
+      format.html { redirect_to hospitalization_days_url, notice: 'Día de estancia eliminado satisfactoriamente.' }
       format.json { head :no_content }
     end
   end

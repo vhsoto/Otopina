@@ -2,7 +2,7 @@
 <%= form_for([@adverse_event,@hospitalization_day]) do |f| %>
   <% if @hospitalization_day.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@hospitalization_day.errors.count, "error") %> prohibited this hospitalization_day from being saved:</h2>
+      <h2><%= pluralize(@hospitalization_day.errors.count, "error") %> y el/los día(s) de estancía no puede ser guardado:</h2>
 
       <ul>
       <% @hospitalization_day.errors.full_messages.each do |message| %>

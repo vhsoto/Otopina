@@ -12,7 +12,7 @@
         <th>Fecha</th> 
         <th>Documento</th> 
         <th>Paciente</th>              
-        <th>Embarazada?</th>
+        <th class="text-center">Embarazada?</th>
         <th>Evento</th>        
         <th>Sucursal</th>
         <th colspan="3"></th>
@@ -25,7 +25,7 @@
           <td><%= fecha adverse_event.time %> <br> <%= hora adverse_event.time %></td> 
           <td><%= adverse_event.patient.document_number %></td>   
           <td><%= adverse_event.patient.name %> <%= adverse_event.patient.lastname %></td>                  
-          <td><%= adverse_event.pregnant %></td>
+          <td class="text-center"><%= adverse_event.pregnant ? embarazada : no_embarazada %></td>
           <td><%= adverse_event.event.Detail %></td>          
           <td><%= adverse_event.branch_office.name %></td>
           <td><%= link_to adverse_event, class: "btn btn-primary btn-sm" do %>
@@ -36,7 +36,7 @@
             <i class="fa fa-pencil"></i>
             <% end %>
           </td>
-          <td><%= link_to adverse_event, method: :delete, data: { confirm: '¿Seguro que desea borrar?' }, class: "btn btn-danger btn-sm" do %>
+          <td><%= link_to adverse_event, method: :delete, data: { confirm: '¿Seguro(a) que desea borrar?' }, class: "btn btn-danger btn-sm" do %>
             <i class="fa fa-trash"></i>
             <% end %></td>
         </tr>
@@ -47,4 +47,7 @@
 
 <br>
 
-<%= link_to 'Nuevo evento adverso', new_adverse_event_path, class: "btn btn-primary btn-sm" %>
+<%= link_to 'Nuevo evento adverso', new_adverse_event_path, class: "btn btn-primary btn-sm" %> <%= link_to root_path, class: "btn btn-primary btn-sm pull-right"  do%>
+  <i class="fa fa-home"></i>
+<% end %>
+<br><br>

@@ -28,7 +28,7 @@ class DrugsController < ApplicationController
 
     respond_to do |format|
       if @drug.save
-        format.html { redirect_to @drug, notice: 'Drug was successfully created.' }
+        format.html { redirect_to @drug, notice: 'Medicamento ingresado satisfactoriamente.' }
         format.json { render :show, status: :created, location: @drug }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class DrugsController < ApplicationController
   def update
     respond_to do |format|
       if @drug.update(drug_params)
-        format.html { redirect_to @drug, notice: 'Drug was successfully updated.' }
+        format.html { redirect_to @drug, notice: 'Medicamento actualizado satisfactoriamente.' }
         format.json { render :show, status: :ok, location: @drug }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class DrugsController < ApplicationController
   def destroy
     @drug.destroy
     respond_to do |format|
-      format.html { redirect_to drugs_url, notice: 'Drug was successfully destroyed.' }
+      format.html { redirect_to drugs_url, notice: 'Medicamento eliminado satisfactoriamente.' }
       format.json { head :no_content }
     end
   end

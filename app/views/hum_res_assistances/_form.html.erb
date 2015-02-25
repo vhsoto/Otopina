@@ -2,7 +2,7 @@
 <%= form_for([@adverse_event,@hum_res_assistance]) do |f| %>
   <% if @hum_res_assistance.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@hum_res_assistance.errors.count, "error") %> prohibited this hum_res_assistance from being saved:</h2>
+      <h2><%= pluralize(@hum_res_assistance.errors.count, "error") %> y el recurso humano asistencial utilizado no puede ser guardado:</h2>
 
       <ul>
       <% @hum_res_assistance.errors.full_messages.each do |message| %>

@@ -2,7 +2,7 @@
 <%= form_for([@adverse_event,@ae_drug]) do |f| %>
   <% if @ae_drug.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@ae_drug.errors.count, "error") %> prohibited this ae_drug from being saved:</h2>
+      <h2><%= pluralize(@ae_drug.errors.count, "error") %> y el medicamento suministrado no puede ser guardado:</h2>
 
       <ul>
       <% @ae_drug.errors.full_messages.each do |message| %>

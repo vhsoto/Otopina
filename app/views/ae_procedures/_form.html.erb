@@ -2,7 +2,7 @@
 <%= form_for([@adverse_event,@ae_procedure]) do |f| %>
   <% if @ae_procedure.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@ae_procedure.errors.count, "error") %> prohibited this ae_procedure from being saved:</h2>
+      <h2><%= pluralize(@ae_procedure.errors.count, "error") %> y el procedimiento realizado no puede ser guardado:</h2>
 
       <ul>
       <% @ae_procedure.errors.full_messages.each do |message| %>

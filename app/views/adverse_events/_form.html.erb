@@ -21,7 +21,7 @@
 <%= form_for(@adverse_event) do |f| %>
   <% if @adverse_event.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@adverse_event.errors.count, "error") %> prohibited this adverse_event from being saved:</h2>
+      <h2><%= pluralize(@adverse_event.errors.count, "error") %> y el evento adverso no puede ser guardado:</h2>
 
       <ul>
       <% @adverse_event.errors.full_messages.each do |message| %>

@@ -29,7 +29,7 @@ class AeProceduresController < ApplicationController
 
     respond_to do |format|
       if @ae_procedure.save
-        format.html { redirect_to adverse_event_path(@adverse_event), notice: 'Ae procedure was successfully created.' }
+        format.html { redirect_to adverse_event_path(@adverse_event), notice: 'Procedimiento realizado, ingresado satisfactoriamente.' }
         format.json { render :show, status: :created, location: @ae_procedure }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class AeProceduresController < ApplicationController
   def update
     respond_to do |format|
       if @ae_procedure.update(ae_procedure_params)
-        format.html { redirect_to adverse_event_path(@adverse_event), notice: 'Ae procedure was successfully updated.' }
+        format.html { redirect_to adverse_event_path(@adverse_event), notice: 'Procedimiento realizado, actualizado satisfactoriamente.' }
         format.json { render :show, status: :ok, location: @ae_procedure }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class AeProceduresController < ApplicationController
   def destroy
     @ae_procedure.destroy
     respond_to do |format|
-      format.html { redirect_to ae_procedures_url, notice: 'Ae procedure was successfully destroyed.' }
+      format.html { redirect_to ae_procedures_url, notice: 'Procedimiento realizado, eliminado satisfactoriamente.' }
       format.json { head :no_content }
     end
   end

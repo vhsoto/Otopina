@@ -29,7 +29,7 @@ class HumResAssistancesController < ApplicationController
 
     respond_to do |format|
       if @hum_res_assistance.save
-        format.html { redirect_to adverse_event_path(@adverse_event), notice: 'Hum res assistance was successfully created.' }
+        format.html { redirect_to adverse_event_path(@adverse_event), notice: 'Recurso humano asistencial utilizado, ingresado satisfactoriamente.' }
         format.json { render :show, status: :created, location: @hum_res_assistance }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class HumResAssistancesController < ApplicationController
   def update
     respond_to do |format|
       if @hum_res_assistance.update(hum_res_assistance_params)
-        format.html { redirect_to adverse_event_path(@adverse_event), notice: 'Hum res assistance was successfully updated.' }
+        format.html { redirect_to adverse_event_path(@adverse_event), notice: 'Recurso humano asistencial utilizado, actualizado satisfactoriamente.' }
         format.json { render :show, status: :ok, location: @hum_res_assistance }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class HumResAssistancesController < ApplicationController
   def destroy
     @hum_res_assistance.destroy
     respond_to do |format|
-      format.html { redirect_to hum_res_assistances_url, notice: 'Hum res assistance was successfully destroyed.' }
+      format.html { redirect_to hum_res_assistances_url, notice: 'Recurso humano asistencial utilizado, eliminado satisfactoriamente.' }
       format.json { head :no_content }
     end
   end

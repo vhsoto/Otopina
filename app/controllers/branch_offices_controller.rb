@@ -28,7 +28,7 @@ class BranchOfficesController < ApplicationController
 
     respond_to do |format|
       if @branch_office.save
-        format.html { redirect_to @branch_office, notice: 'Branch office was successfully created.' }
+        format.html { redirect_to @branch_office, notice: 'Sede ingresada satisfactoriamente.' }
         format.json { render :show, status: :created, location: @branch_office }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class BranchOfficesController < ApplicationController
   def update
     respond_to do |format|
       if @branch_office.update(branch_office_params)
-        format.html { redirect_to @branch_office, notice: 'Branch office was successfully updated.' }
+        format.html { redirect_to @branch_office, notice: 'Sede actualizada satisfactoriamente.' }
         format.json { render :show, status: :ok, location: @branch_office }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class BranchOfficesController < ApplicationController
   def destroy
     @branch_office.destroy
     respond_to do |format|
-      format.html { redirect_to branch_offices_url, notice: 'Branch office was successfully destroyed.' }
+      format.html { redirect_to branch_offices_url, notice: 'Sede eliminada satisfactoriamente.' }
       format.json { head :no_content }
     end
   end
