@@ -28,7 +28,7 @@ class DrugsController < ApplicationController
 
     respond_to do |format|
       if @drug.save
-        format.html { redirect_to @drug, notice: 'Medicamento ingresado satisfactoriamente.' }
+        format.html { redirect_to drugs_path, notice: 'Medicamento ingresado satisfactoriamente.' }
         format.json { render :show, status: :created, location: @drug }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class DrugsController < ApplicationController
   def update
     respond_to do |format|
       if @drug.update(drug_params)
-        format.html { redirect_to @drug, notice: 'Medicamento actualizado satisfactoriamente.' }
+        format.html { redirect_to drugs_path, notice: 'Medicamento actualizado satisfactoriamente.' }
         format.json { render :show, status: :ok, location: @drug }
       else
         format.html { render :edit }
@@ -68,7 +68,7 @@ class DrugsController < ApplicationController
     rescue
       redirect_to drugs_path, notice: "Formato CSV no valido."
     end
-  end
+  end  
 
   private
     # Use callbacks to share common setup or constraints between actions.

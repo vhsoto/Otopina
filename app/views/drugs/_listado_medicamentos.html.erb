@@ -1,0 +1,44 @@
+<div class="modal fade" id="modalMedicamentos" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="exampleModalLabel">Lista de medicamentos</h4>
+        <br>        
+        <div class="row">
+          <div class="text-center col-sm-8 col-md-8 col-lg-8">
+            <div class="input-group">
+              <%= text_field_tag "filter", nil, class: "form-control", placeholder: "Buscar..." %>
+              <span class="input-group-btn">
+                <%= link_to nil, class: "btn btn-primary" do  %> 
+                <i class="fa fa-search"></i>
+                <% end %>
+              </span>      
+            </div> 
+          </div>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="table-responsive">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Código</th>
+                <th>Nombre</th>
+              </tr>
+            </thead>
+
+            <tbody class="searchable">
+              <% @drugs.each do |drug| %>
+                <tr>
+                  <td><%= drug.code %></td>
+                  <td><%= drug.name %></td>                  
+                </tr>
+              <% end %>      
+            </tbody>
+          </table>
+        </div>
+      </div>      
+    </div>
+  </div>
+</div>

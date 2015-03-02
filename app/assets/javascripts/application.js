@@ -12,8 +12,23 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.soulmate
+//= require jquery-ui
 //= require turbolinks
 //= require_tree .
-//= require jquery
 //= require bootstrap-sprockets
 
+$(document).ready(function() {
+  (function($) {
+    $('#filter').keyup(function() {
+      var rex;
+      rex = new RegExp($(this).val(), 'i');
+      $('.searchable tr').hide();
+      $('.searchable tr').filter(function() {
+        return rex.test($(this).text());
+      }).show();
+    });
+  })(jQuery);
+});
+
+$(document).on('page:load', ready);

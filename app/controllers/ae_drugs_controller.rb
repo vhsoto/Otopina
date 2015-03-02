@@ -11,11 +11,13 @@ class AeDrugsController < ApplicationController
   # GET /ae_drugs/1
   # GET /ae_drugs/1.json
   def show
+   
   end
 
   # GET /ae_drugs/new
   def new
     @ae_drug = @adverse_event.ae_drugs.build
+    @drugs = Drug.all
   end
 
   # GET /ae_drugs/1/edit
@@ -30,10 +32,10 @@ class AeDrugsController < ApplicationController
     respond_to do |format|
       if @ae_drug.save
         format.html { redirect_to adverse_event_path(@adverse_event), notice: 'Medicamento suministrado, ingresado satisfactoriamente.' }
-        format.json { render :show, status: :created, location: @ae_drug }
+        format.json { render :show, status: :created, location: @ae_drug }       
       else
         format.html { render :new }
-        format.json { render json: @ae_drug.errors, status: :unprocessable_entity }
+        format.json { render json: @ae_drug.errors, status: :unprocessable_entity }        
       end
     end
   end

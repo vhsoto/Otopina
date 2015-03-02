@@ -11,6 +11,9 @@
 #
 
 class Drug < ActiveRecord::Base
+	after_save :load_into_soulmate
+	before_destroy :remove_from_soulmate
+
 	require 'csv'
 	def self.import(file)
 		CSV.foreach(file.path, headers: true) do |row|
@@ -30,4 +33,18 @@ class Drug < ActiveRecord::Base
 	validates_presence_of :code
 	validates_presence_of :name
 	validates_presence_of :price
+
+	private 
+ 
+	def load_into_soulmate
+		loader = Soulmate::Loader.new("drugs")
+		loader.add("term" => name, "id" => self.id, "data" => {
+			"link" => Rails.application.routes.url_helpers.drug_path(self)
+	   	})
+	end
+ 
+	def remove_from_soulmate
+		loader = Soulmate::Loader.new("drugs")
+	    loader.remove("id" => self.id)
+	end
 end
