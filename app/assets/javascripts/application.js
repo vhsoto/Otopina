@@ -18,7 +18,7 @@
 //= require_tree .
 //= require bootstrap-sprockets
 
-$(document).ready(function() {
+$(document).on('ready page:load', function() {
   (function($) {
     $('#filter').keyup(function() {
       var rex;
@@ -30,5 +30,3 @@ $(document).ready(function() {
     });
   })(jQuery);
 });
-
-$(document).on('page:load', ready);
