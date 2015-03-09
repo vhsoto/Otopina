@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  mount Soulmate::Server, :at => "/autocomplete/"
+  
   get 'welcome/index'
 
   root 'welcome#index'
@@ -34,6 +34,7 @@ Rails.application.routes.draw do
   resources :patients do
     collection do
       get 'search'
+      get 'lista_modal_paciente'
     end
   end
 

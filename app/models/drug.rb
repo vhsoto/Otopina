@@ -33,18 +33,5 @@ class Drug < ActiveRecord::Base
 	validates_presence_of :code
 	validates_presence_of :name
 	validates_presence_of :price
-
-	private 
- 
-	def load_into_soulmate
-		loader = Soulmate::Loader.new("drugs")
-		loader.add("term" => name, "id" => self.id, "data" => {
-			"link" => Rails.application.routes.url_helpers.drug_path(self)
-	   	})
-	end
- 
-	def remove_from_soulmate
-		loader = Soulmate::Loader.new("drugs")
-	    loader.remove("id" => self.id)
-	end
+	
 end

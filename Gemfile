@@ -50,6 +50,4 @@ gem 'annotate'
 gem "font-awesome-rails"
 
 
-# Autocomplete search
-gem 'rack-contrib'
-gem 'soulmate', :require => 'soulmate/server'
+

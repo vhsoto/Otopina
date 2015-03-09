@@ -9,7 +9,7 @@ class PatientsController < ApplicationController
 
   # GET /patients/1
   # GET /patients/1.json
-  def show
+  def show    
   end
 
   # GET /patients/new
@@ -73,6 +73,13 @@ class PatientsController < ApplicationController
         format.html { render :show }
         format.js
       end
+    end
+  end
+
+  def lista_modal_paciente
+    @patients = Patient.all
+    respond_to do |format|
+      format.js {  }
     end
   end
 

@@ -18,15 +18,19 @@
 //= require_tree .
 //= require bootstrap-sprockets
 
-$(document).on('ready page:load', function() {
-  (function($) {
-    $('#filter').keyup(function() {
-      var rex;
-      rex = new RegExp($(this).val(), 'i');
-      $('.searchable tr').hide();
-      $('.searchable tr').filter(function() {
-        return rex.test($(this).text());
-      }).show();
-    });
-  })(jQuery);
-});
+function habilitarFiltro() {
+  //Habilita el filtro de busqueda
+  $('#filter').keyup(function() {
+    var rex;
+    rex = new RegExp($(this).val(), 'i');
+    $('.searchable tr').hide();
+    $('.searchable tr').filter(function() {
+      return rex.test($(this).text());
+    }).show();
+  });
+}
+
+$(document).on('ready page:load', habilitarFiltro);
+
+
+

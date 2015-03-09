@@ -1,0 +1,10 @@
+$('#modalPaciente').replaceWith("<%= escape_javascript(render partial: 'patients/lista_pacientes', locals: {patients: @patients}) %>");
+$('#modalPaciente').modal('toggle');
+habilitarFiltro();
+$('.searchable tr').click(function(){		
+	var id = $(this).data('id');
+	var cedula = $(this).data('cedula');	
+	$('#cedula_paciente').val(cedula);
+	$('#search_patient').trigger('submit.rails');
+	$('#modalPaciente').modal('toggle');		
+});

@@ -7,16 +7,20 @@
   </div>
 <% else %>
   <label>Cédula del paciente</label>
-  <%= form_tag(search_patients_path, method: :get, remote: true, class: "form-inline") do %>  
+  <%= form_tag(search_patients_path, method: :get, remote: true, id: "search_patient", class: "form-inline") do %>  
     <div class="form-group"> 
       <%= text_field_tag "cedula_paciente", nil, placeholder: "Número documento", class: 'form-control' %>
     </div>
-      <%= submit_tag "Buscar", class: "btn btn-primary" %>      
+      <%= submit_tag "Agregar", class: "btn btn-primary" %> <%= link_to "Ver pacientes", lista_modal_paciente_patients_path, remote: true, class: "btn btn-primary" %>  
   <% end %>  
+  <br><br>
     <div id="patient_info"> 
     <!-- Cargo los datos del paciente       -->    
-    </div> 
+    </div>     
 <% end %>
+<div id="modalPaciente">
+      <!-- Cargo la modal  -->
+</div>
 <br>
 <%= form_for(@adverse_event) do |f| %>
   <% if @adverse_event.errors.any? %>
@@ -92,3 +96,4 @@
   
   <%= f.hidden_field :patient_id %>
 <% end %>
+
