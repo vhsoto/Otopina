@@ -22,11 +22,13 @@ class AeDrugsController < ApplicationController
 
   # GET /ae_drugs/1/edit
   def edit
+    @drugs = Drug.all
   end
 
   # POST /ae_drugs
   # POST /ae_drugs.json
   def create
+    @drugs = Drug.all
     @ae_drug = @adverse_event.ae_drugs.create(ae_drug_params)
 
     respond_to do |format|
@@ -43,6 +45,7 @@ class AeDrugsController < ApplicationController
   # PATCH/PUT /ae_drugs/1
   # PATCH/PUT /ae_drugs/1.json
   def update
+    @drugs = Drug.all
     respond_to do |format|
       if @ae_drug.update(ae_drug_params)
         format.html { redirect_to adverse_event_path(@adverse_event), notice: 'Medicamento suministrado, actualizado satisfactoriamente.' }

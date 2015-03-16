@@ -21,14 +21,16 @@ Rails.application.routes.draw do
 
   resources :event_categories do
 
-    resources :events
-    
+    resources :events 
   end
 
   resources :charges
 
   resources :drugs do 
-    collection { post :import }    
+    collection { post :import }
+    collection do        
+        get 'lista_modal_medicamento'
+      end    
   end
 
   resources :patients do

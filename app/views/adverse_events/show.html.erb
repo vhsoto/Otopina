@@ -36,7 +36,8 @@
             </td>
           </tr>
         </tbody>
-      </table>
+      </table> 
+      <div class="collapse" id="eventoAcordeon">     
       <table class="table">
         <thead>
           <tr>
@@ -48,140 +49,193 @@
           <td><%= @adverse_event.reason_admission %></td>
           <td><%= @adverse_event.description %></td>
         </tbody>
-      </table>
+      </table> 
+      </div>     
+    </div>    
+  </div>
+  <div class="text-center" type="button" data-toggle="collapse" data-target="#eventoAcordeon" aria-expanded="false" aria-controls="eventoAcordeon"><i class="fa fa-ellipsis-h"> </i>
+    <!-- <button class="btn btn-sm btn-default" </button> -->
+  </div>
+</div>  
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <br>
+    <h3 class="panel-title"><strong>Medicamentos</strong>
+    <button class="btn btn-sm btn-default pull-right" type="button" data-toggle="collapse" data-target="#medicamentosAcordeon" aria-expanded="false" aria-controls="medicamentosAcordeon"><i class="fa fa-sort-desc"> </i></button>
+    </h3> 
+    <br>      
+  </div>
+  <div class="panel-body">
+    <div class="collapse" id="medicamentosAcordeon">
+      <%= link_to new_adverse_event_ae_drug_path(@adverse_event), class: "btn btn-primary btn-sm" do %>
+        <i class="fa fa-plus-circle"><span></span>  Agregar Medicamento</i> 
+      <% end %>  
+
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Fecha</th>
+              <th>Medicamento</th>
+              <th>Cantidad</th>
+              <th>Precio</th>
+              <th>Cargo</th>
+              <th>Servicio</th>
+              <th>Subtotal</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <%= render @adverse_event.ae_drugs %>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td><span class="label label-info">Total:</span></td>
+              <td><%= number_to_currency(@adverse_event.ae_drugs.sum(:drug_subtotal), delimiter: ".") %></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 </div>
 
 
-<h3>Medicamentos</h3>
-<%= link_to new_adverse_event_ae_drug_path(@adverse_event), class: "btn btn-primary btn-sm" do %>
-  <i class="fa fa-plus-circle"><span></span>  Agregar Medicamento</i> 
-<% end %>  
-
-<div class="table-responsive">
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Fecha</th>
-        <th>Medicamento</th>
-        <th>Cantidad</th>
-        <th>Precio</th>
-        <th>Cargo</th>
-        <th>Servicio</th>
-        <th>Subtotal</th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-      <%= render @adverse_event.ae_drugs %>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td><span class="label label-info">Total:</span></td>
-        <td><%= number_to_currency(@adverse_event.ae_drugs.sum(:drug_subtotal), delimiter: ".") %></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <br>
+    <h3 class="panel-title"><strong>Procedimientos</strong>
+    <button class="btn btn-sm btn-default pull-right" type="button" data-toggle="collapse" data-target="#procedimientosAcordeon" aria-expanded="false" aria-controls="procedimientosAcordeon"><i class="fa fa-sort-desc"> </i></button>
+    </h3> 
+    <br>      
+  </div>
+  <div class="panel-body">
+    <div class="collapse" id="procedimientosAcordeon">
+      <%= link_to new_adverse_event_ae_procedure_path(@adverse_event), class: "btn btn-primary btn-sm" do %>
+          <i class="fa fa-plus-circle"><span></span>  Agregar procedimiento</i>  
+      <% end %>  
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Tiempo</th>
+              <th>Procedimiento</th>
+              <th>Precio</th>
+              <th>Servicio</th>
+              <th>Cargo</th>  
+              <th>Subtotal</th>      
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <%= render @adverse_event.ae_procedures %>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td><span class="label label-info">Total:</span></td>
+              <td><%= number_to_currency(@adverse_event.ae_procedures.sum(:procedure_price), delimiter: ".") %></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
 </div>
 
 
-<h3>Procedimientos</h3>
-<%= link_to new_adverse_event_ae_procedure_path(@adverse_event), class: "btn btn-primary btn-sm" do %>
-  <i class="fa fa-plus-circle"><span></span>  Agregar procedimiento</i>  
-<% end %>  
-<div class="table-responsive">
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Tiempo</th>
-        <th>Procedimiento</th>
-        <th>Precio</th>
-        <th>Servicio</th>
-        <th>Cargo</th>  
-        <th>Subtotal</th>      
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-      <%= render @adverse_event.ae_procedures %>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td><span class="label label-info">Total:</span></td>
-        <td><%= number_to_currency(@adverse_event.ae_procedures.sum(:procedure_price), delimiter: ".") %></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <br>
+    <h3 class="panel-title"><strong>Recursos humanos asistenciales</strong>
+    <button class="btn btn-sm btn-default pull-right" type="button" data-toggle="collapse" data-target="#RHAAcordeon" aria-expanded="false" aria-controls="RHAAcordeon"><i class="fa fa-sort-desc"> </i></button>
+    </h3> 
+    <br>      
+  </div>
+  <div class="panel-body">
+    <div class="collapse" id="RHAAcordeon">
+      <%= link_to new_adverse_event_hum_res_assistance_path(@adverse_event), class: "btn btn-primary btn-sm" do %>
+        <i class="fa fa-plus-circle"><span></span>  Agregar Recurso humano asistencial</i>  
+      <% end %>  
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Fecha</th>
+              <th>Nombre</th>
+              <th>Cantidad</th>
+              <th>Precio</th>
+              <th>Servicio</th>
+              <th>Subtotal</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <%= render @adverse_event.hum_res_assistances %>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td><span class="label label-info">Total:</span></td>
+              <td><%= number_to_currency(@adverse_event.hum_res_assistances.sum(:subtotal), delimiter: ".") %></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
 </div>
 
-<h3>Recursos humanos asistenciales</h3>
-<%= link_to new_adverse_event_hum_res_assistance_path(@adverse_event), class: "btn btn-primary btn-sm" do %>
-  <i class="fa fa-plus-circle"><span></span>  Agregar Recurso humano asistencial</i>  
-<% end %>  
-<div class="table-responsive">
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Fecha</th>
-        <th>Nombre</th>
-        <th>Cantidad</th>
-        <th>Precio</th>
-        <th>Servicio</th>
-        <th>Subtotal</th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-      <%= render @adverse_event.hum_res_assistances %>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td><span class="label label-info">Total:</span></td>
-        <td><%= number_to_currency(@adverse_event.hum_res_assistances.sum(:subtotal), delimiter: ".") %></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
 
-<h3>Días de estancia</h3>
-<%= link_to new_adverse_event_hospitalization_day_path(@adverse_event), class: "btn btn-primary btn-sm" do %>
-  <i class="fa fa-plus-circle"><span></span>  Agregar Día de estancia</i>  
-<% end %>  
-<div class="table-responsive">
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Fecha</th>
-        <th>Cantidad</th>
-        <th>Precio</th>
-        <th>Servicio</th>
-        <th>Subtotal</th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-      <%= render @adverse_event.hospitalization_days %>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td><span class="label label-info">Total:</span></td>
-        <td><%= number_to_currency(@adverse_event.hospitalization_days.sum(:subtotal), delimiter: ".") %></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <br>
+    <h3 class="panel-title"><strong>Días de estancia</strong>
+    <button class="btn btn-sm btn-default pull-right" type="button" data-toggle="collapse" data-target="#diasAcordeon" aria-expanded="false" aria-controls="diasAcordeon"><i class="fa fa-sort-desc"> </i></button>
+    </h3> 
+    <br>      
+  </div>
+  <div class="panel-body">
+    <div class="collapse" id="diasAcordeon">
+      <%= link_to new_adverse_event_hospitalization_day_path(@adverse_event), class: "btn btn-primary btn-sm" do %>
+        <i class="fa fa-plus-circle"><span></span>  Agregar Día de estancia</i>  
+      <% end %>  
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Fecha</th>
+              <th>Cantidad</th>
+              <th>Precio</th>
+              <th>Servicio</th>
+              <th>Subtotal</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <%= render @adverse_event.hospitalization_days %>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td><span class="label label-info">Total:</span></td>
+              <td><%= number_to_currency(@adverse_event.hospitalization_days.sum(:subtotal), delimiter: ".") %></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
 </div>
 <br>
 <br>

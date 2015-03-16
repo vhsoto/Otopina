@@ -70,6 +70,13 @@ class DrugsController < ApplicationController
     end
   end  
 
+  def lista_modal_medicamento
+    @drugs = Drug.all
+    respond_to do |format| 
+      format.js { }
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_drug

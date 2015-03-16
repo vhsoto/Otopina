@@ -22,6 +22,7 @@ class AdverseEventsController < ApplicationController
 
   # GET /adverse_events/new
   def new
+    @event_categories = EventCategory.all
     @patients = Patient.all
     @adverse_event = AdverseEvent.new
     unless params[:patient_id].nil?

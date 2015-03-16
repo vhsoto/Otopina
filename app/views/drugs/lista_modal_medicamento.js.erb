@@ -1,0 +1,12 @@
+$('#modalMedicamentos').replaceWith("<%= escape_javascript(render partial: 'drugs/listado_medicamentos', locals: {drugs: @drugs}) %>");
+$('#modalMedicamentos').modal('toggle');
+habilitarFiltro();
+$('.searchable tr').click(function(){
+	var id = $(this).data('id');
+	var precio = $(this).data('precio');
+	var nombre = $(this).data('medicamento');
+	$('#ae_drug_drug_id').val(id);	
+	$('#ae_drug_drug_price').val(precio);
+	$('#nombre').val(nombre);	
+	$('#modalMedicamentos').modal('toggle');
+});

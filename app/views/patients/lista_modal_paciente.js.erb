@@ -5,6 +5,16 @@ $('.searchable tr').click(function(){
 	var id = $(this).data('id');
 	var cedula = $(this).data('cedula');	
 	$('#cedula_paciente').val(cedula);
+
+	$(document).on('patients_partial_loaded', function(){
+		//Mostrar/Ocultar el checkbox de embarazo una vez cargó los datos del paciente.
+		if ($('#genero').text() === 'Masculino') {
+			$('#embarazo').hide();
+		}else{
+			$('#embarazo').show()
+		}
+	});
 	$('#search_patient').trigger('submit.rails');
-	$('#modalPaciente').modal('toggle');		
+	$('#modalPaciente').modal('toggle');	
+	
 });

@@ -16,7 +16,7 @@
         <td><%= event.event_category %></td>
         <td><%# link_to 'Ver', event %></td>
         <td><%# link_to 'Editar', edit_event_path(event) %></td>
-        <td><%= link_to 'Eliminar', event, method: :delete, data: { confirm: '¿Está seguro(a) que quiere eliminar?' } %></td>
+        <td><%= link_to 'Eliminar', new_event_category_event_path, method: :delete, data: { confirm: '¿Está seguro(a) que quiere eliminar?' } %></td>
       </tr>
     <% end %>
   </tbody>

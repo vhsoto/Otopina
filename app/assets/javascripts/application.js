@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery.soulmate
 //= require jquery-ui
 //= require turbolinks
 //= require_tree .
@@ -30,7 +29,7 @@ function habilitarFiltro() {
   });
 }
 
-$(document).on('ready page:load', habilitarFiltro);
+$(document).on('ready page:load', habilitarFiltro());
 
 
 

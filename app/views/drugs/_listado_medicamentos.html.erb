@@ -10,7 +10,7 @@
             <div class="input-group">
               <%= text_field_tag "filter", nil, class: "form-control", placeholder: "Buscar..." %>
               <span class="input-group-btn">
-                <%= link_to nil, class: "btn btn-primary" do  %> 
+                <%= link_to nil, class: "btn btn-primary disabled" do  %> 
                 <i class="fa fa-search"></i>
                 <% end %>
               </span>      
@@ -30,9 +30,9 @@
 
             <tbody class="searchable">
               <% @drugs.each do |drug| %>
-                <tr>
+                <tr data-id="<%= drug.id %>" data-precio="<%= drug.price %>" data-medicamento="<%= drug.name %>">
                   <td><%= drug.code %></td>
-                  <td><%= drug.name %></td>                  
+                  <td><%= drug.name %></td>                                    
                 </tr>
               <% end %>      
             </tbody>
